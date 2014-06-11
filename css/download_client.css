@@ -1,0 +1,55 @@
+/*
+Author:Li MingYue  
+Date:[2013-12-9]
+*/
+/*public style*/
+body,h1,h2,h3,h4,h5,h6,p,dl,dt,dd,ul,ol,li,del,form,th,td{margin:0;padding:0;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}del {text-decoration:none;}em,i{font-style:normal;}ul,ol,li{list-style:none;}img{border:none;}button,input,select,textarea{font-size:100%;}table{border-collapse:collapse;border-spacing:0;}.clear{clear:both;font-size:0;height:0;line-height:0;overflow:hidden;}.clearfix:after {clear:both;content:" ";display:block;font-size:0;height:0;visibility:hidden;}.clearfix{zoom:1;}
+
+/*this is download_client style
+************************************************/
+.download_wapper{position:absolute;margin:0 auto;width: 100%;overflow:hidden;}
+.mask{ position:absolute;top:0;left:0; width: 100%;height:100%;z-index: 9999;}
+.mask img{ position:absolute;overflow:visible;top:0;left:0; width: 100%;z-index: 9999;}
+.close_mask{position:absolute;top:3%;right:2%;width:5%;height:8%;text-indent: -1800px;z-index: 10000;cursor:pointer;}
+.download_wapper .download_btn{position: absolute;top:50%;left:6%;display: block;width:18%;height:12%;text-indent: -1800px;z-index: 10000;}
+.download_wapper .look_btn{position: absolute;top:50%;left:41%;display: block;width:14%;height:9%;text-indent: -1800px;z-index:10000;}
+.dd_client{background-color:#fff;position: absolute;top:10%;left:0;width:100%;}
+.dd_client .hide{display: none;}
+.dd_client button{background-color:#fff;position:absolute;top:33%;left:26%;width:6%;height:35.6%;line-height: 35.6%;border: 2px solid #007aff;color:#007aff;border-radius: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;font-size: 1.4em;font-family: '\9ED1\4F53';font-weight: bold;cursor:pointer;}
+.dd_client button:hover{background-color:#007aff;color:#fff;}
+img.close,img.logo,div.whether{position: absolute;}
+img.close{top:44%;left:2.02%;width:1.3%;height: 14.7%;cursor:pointer;}
+img.logo{top:11.08%;left:5.5%;width:7%;height: 79.4%}
+div.whether{top:42%;left:13.8%;font-family: '\9ED1\4F53';font-weight: bold;}
+div.whether{font-size:1.8em;}
+div.whether span{font-size:0.7em;color: #666;}
+
+
+@media screen and (max-width:1366px){
+	.dd_client button{font-size: 1.2em}
+}
+@media screen and (max-width:1024px){
+	.dd_client button{width:7%;font-size: 1em}
+	div.whether{font-size:1em;}
+}
+@media screen and (max-width:768px){
+	.dd_client button{width:48px;font-size: 0.8em}
+	div.whether{font-size:0.8em;}
+}
+@media screen and (max-width:640px){
+	.dd_client button{width:42px;height:20px;font-size:0.4em;}
+	img.close{width:10px;height:10px;}
+	div.whether{font-size:0.4em;}
+}
+@media screen and (max-width:500px){
+	.dd_client{height:38px;}
+	.dd_client button{left:33%;}
+	img.logo{width:35px;height:35px;}
+	div.whether{left:15%;font-size:0.2em;}
+}
+@media screen and (max-width:320px){
+	.dd_client{height:35px;}
+	.dd_client button{left:45%;}
+	div.whether{left:20%;font-size:0.05em;}
+}
+

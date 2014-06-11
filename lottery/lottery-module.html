@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>充值确认页</title>
+<link href="css/dd_style.css" rel="stylesheet" type="text/css" />
+<style>
+	html { font-size: 12px; color: #404040; font-family: SimSun; }
+	body, button, ul, li, ol, p, dl, dd, h1, h2, h3, h4, h5, h6, img, iframe, form { margin: 0; padding: 0; list-style-type: none; border: 0; }
+
+	.betting_box:after { content: "."; height: 0; display: block; clear: both; visibility: hidden; }
+	.betting_box { padding: 0 12px; line-height: 20px; zoom: 1; }
+	.betting_box .tab { border-bottom: solid 1px #e4e4e4; padding: 5px 0 4px; line-height: 18px; height: 18px; }
+	.betting_box .tab span { display: inline-block; line-height: 18px; padding: 0 4px; margin-right: 14px; cursor: pointer; color: #666; _padding-top: 1px; _height: 17px; _overflow: hidden; }
+	.betting_box .tab .on { background: #feac73; color: #fff; }
+	.betting_box .tab .last { margin-right: 8px; }
+	.betting_box .tab a { color: #1a66b3; _padding-top: 1px; display: inline-block; }
+	.betting_box .picbox { float: left; width: 70px; padding-top: 16px; }
+	.betting_box .content { float: left; width: 194px; padding-top: 11px; overflow: hidden; }
+	.betting_box .content .en { font-weight: bold; color: #c30; padding: 0 4px; }
+	.betting_box .content .ball_line { padding-bottom: 3px; }
+	.betting_box .ball_line span { background: url(images/sprite_ball.png); width: 23px; height: 25px; display: inline-block; font-family: Arial; color: #fff; line-height: 23px; text-align: center; font-weight: bold; margin-right: 5px; }
+	.betting_box .ball_line .blue_ball { background-position: right 0; }
+	.betting_box .ball_line .last { margin-right: 0; }
+	.betting_box .content a { color: #1a66b3; margin-right: 20px; }
+	.betting_box .btn_buy { background: url(images/sprite_ball.png) left -25px repeat-x; height: 22px; border: 0; font-size: 12px; font-weight: bold; color: #fff; cursor: pointer; margin-right: 4px; vertical-align: middle; padding-top: 1px; _padding-top: 3px; width: 70px; }
+	.betting_box .off { background-position: left -47px; cursor: default;}
+
+	@-moz-document url-prefix(){.betting_box .btn_buy {padding-bottom:4px;}}
+	.betting_box .content li { padding: 0 0 6px 0; color: #404040; white-space: nowrap; }
+	.betting_box .content li .gray { color: #878787; display: inline-block; vertical-align: middle; padding-top: 2px; *padding-top: 4px; }
+	.betting_box a { color: #404040; text-decoration: none; }
+	.betting_box a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="betting_box">
+	<div class="tab"><span class="on">双色球</span><span>福彩3D</span><span>大乐透</span><span class="last">排列三</span><a href="#">更多&gt;&gt;</a></div>
+	<div class="picbox"><img src="images/icon_60_ssq.png" alt="" width="60" /></div>
+	<ul class="content">
+		<li>第<span class="en">20120509</span>期</li>
+		<li class="ball_line"><span class="ball">01</span><span class="ball">1</span><span class="ball">1</span><span class="ball">20</span><span class="ball">1</span><span class="ball">1</span><span class="blue_ball last">8</span></li>
+		<li><a href="#">机选1注</a><a href="#">自选</a></li>
+		<li><input type="button" class="btn_buy off" value="暂停购买" /><span class="gray">2元投注, 1000万回报!</span></li>
+	</ul>
+</div>
+<div class="betting_box">
+	<div class="tab"><span>双色球</span><span class="on">福彩3D</span><span>大乐透</span><span class="last">排列三</span><a href="#">更多&gt;&gt;</a></div>
+	<div class="picbox"><img src="images/icon_60_ssq.png" alt="" width="60" /></div>
+	<ul class="content">
+		<li>第<span class="en">20120509</span>期</li>
+		<li class="ball_line"><span class="ball">1</span><span class="ball">1</span><span class="ball">1</span></li>
+		<li><a href="#">机选1注</a><a href="#">自选</a></li>
+		<li><input type="button" class="btn_buy" value="立刻购买" /><span class="gray">每日开奖中多少都免税</span></li>
+	</ul>
+</div>
+<div class="betting_box">
+	<div class="tab"><span>双色球</span><span>福彩3D</span><span class="on">大乐透</span><span class="last">排列三</span><a href="#">更多&gt;&gt;</a></div>
+	<div class="picbox"><img src="images/icon_60_ssq.png" alt="" width="60" /></div>
+	<ul class="content">
+		<li>第<span class="en">20120509</span>期</li>
+		<li class="ball_line"><span class="ball">1</span><span class="ball">1</span><span class="ball">1</span><span class="ball">1</span><span class="ball">1</span><span class="blue_ball">1</span><span class="blue_ball last">8</span></li>
+		<li><a href="#">机选1注</a><a href="#">自选</a></li>
+		<li><input type="button" class="btn_buy" value="立刻购买" /><span class="gray">3元最多豪取1600万！</span></li>
+	</ul>
+</div>
+<div class="betting_box">
+	<div class="tab"><span>双色球</span><span>福彩3D</span><span>大乐透</span><span class="last on">排列三</span><a href="#">更多&gt;&gt;</a></div>
+	<div class="picbox"><img src="images/icon_60_ssq.png" alt="" width="60" /></div>
+	<ul class="content">
+		<li>第<span class="en">20120509</span>期</li>
+		<li class="ball_line"><span class="ball">1</span><span class="ball">1</span><span class="ball">1</span></li>
+		<li><a href="#">机选1注</a><a href="#">自选</a></li>
+		<li><input type="button" class="btn_buy" value="立刻购买" /><span class="gray">固定奖2元最高1000元！</span></li>
+	</ul>
+</div>
+</div>
+</body>
+</html>

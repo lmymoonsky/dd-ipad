@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>充值确认页</title>
+<link href="css/dd_style.css" rel="stylesheet" type="text/css" />
+<style>
+	html { font-size: 12px; color: #404040; font-family: SimSun; }
+	body, button, ul, li, ol, p, dl, dd, h1, h2, h3, h4, h5, h6, img, iframe, form { margin: 0; padding: 0; list-style-type: none; border: 0; }
+	.phone_recharge h3 { font-family: 'Microsoft YaHei',SimSun; font-size: 14px; color: #666; font-weight: normal; float: left; cursor: pointer; border-top: solid 2px #f7f5f4; position: relative; z-index: 2; }
+	.phone_recharge h3 span { padding: 0 10px; display: block; height: 24px; float: left; _font-weight: bold; }
+	.phone_recharge .head .on { background: #fff; border-bottom: 0; border-top: solid 2px #ff7214; }
+	.phone_recharge .head .on span { border: solid 1px #e4e4e4; border-width: 0 1px; color: #f60; }
+	.phone_recharge { border: solid 1px #e4e4e4; height: 192px; }
+	.phone_recharge .head { height: 26px; line-height: 22px; _line-height: 24px; background: #f7f5f4; padding: 0 12px; padding-top: 6px; position: relative; }
+	.phone_recharge .head .border { border-bottom: solid 1px #e4e4e4; position: absolute; left: 0; bottom: 0; height: 0; overflow: hidden; width: 100%; }
+
+	.phone_box { padding: 6px 12px 0; color: #999; line-height: 20px; }
+	.phone_box div .input_num { padding-left: 0; position: absolute; color: #404040; top: 14px; left: 130px; }
+	.phone_box div .input_num input { width: 110px; height: 23px; line-height: 23px; padding: 0 4px; border: 1px solid #DDDDDD; vertical-align: middle\9; font-size: 14px; font-family: arial; }
+	.phone_box div .input_num .num_tips { font-weight: bold; font-size: 14px; position: absolute; left: -160px; top: -48px; _top: -48px; background: #fff; padding: 0; width: 228px; height: 24px; border: 2px solid #f7d1b5; line-height: 24px; text-align: center; }
+	.phone_box div .input_num .num_tips em { font-family: arial; font-style: normal; font-size: 18px; padding-right: 15px; position: relative; top: 2px; }
+	.phone_box div .input_num .num_tips i { width: 9px; height: 7px; overflow: hidden; background: url(../images/mobile_index.png) no-repeat -74px -90px; display: block; position: absolute; bottom: -7px; _bottom: -8px; left: 109px; }
+	.phone_box .error { color: #c30; }
+	.phone_box .num_iframe { position: absolute; background: #fff; height: 50px; width: 160px; left: 0; top: 19px; z-index: -1; display: none; }
+	.phone_box select { vertical-align: middle; _vertical-align: top; font-family: Arial; margin-top: 0; }
+	.phone_box div .wait { background: url(../images/mobile_loader.gif) no-repeat 0 0; font-weight: bold; padding-left: 22px; line-height: 20px; height: 20px; }
+	.phone_box div span.input_num .num_list { padding: 0; display: block; position: absolute; top: 5px; left: -130px; overflow: auto; width: 160px; border: 1px solid #C0C0C0; background: #fff; z-index: 100; padding: 3px 0; height: 124px\9\0; }
+	.phone_box div span.input_num .num_list a { cursor: default; margin: 0; text-decoration: none; width: auto; color: #404040; display: block; height: auto; line-height: 18px; padding-left: 4px; }
+	.phone_box div span.input_num .num_list a:hover { color: #fff; background: #00F; }
+	.phone_box .label { color: #404040; padding-right: 10px; font-family: Arial; }
+	.phone_box div { float: left; }
+	.phone_box .input { position: relative; }
+	.phone_box li { padding-top: 8px; float: left; width: 100%; *padding-top: 3px; white-space: nowrap; }
+	.phone_box .button { width: 74px; height: 26px; border: 0; font-size: 14px; font-weight: bold; color: #fff; cursor: pointer; margin-right: 8px; vertical-align: middle; padding-bottom: 3px; *padding: 1px; padding: 2px\0; background: url(http://img4.ddimg.cn/00109/phone/phone_button_bg.png) left top no-repeat; font-family: 'Microsoft YaHei'; }
+	.phone_box .t { color: #404040; display: inline-block; float: left; width: 52px; text-align: right; word-spacing: 19px; padding-right: 4px; }
+	.phone_box .text { border: solid 1px #ccc; height: 18px; line-height: 18px; width: 150px; padding: 0 5px; font-family: Arial; }
+	.phone_box .en { font-weight: bold; color: #c30; font-family: Arial; }
+	.phone_box .label input { vertical-align: middle; margin-top: -1px; margin-top: -2px\0; }
+	.phone_box a { color: #404040; text-decoration: none; }
+	.phone_box a:hover { color: #f60; text-decoration: underline; }
+
+	.betting_box { padding: 0 12px; line-height: 20px; }
+	.betting_box .tab { border-bottom: solid 1px #e4e4e4; padding: 5px 0 4px; line-height: 18px; height: 18px; }
+	.betting_box .tab span { display: inline-block; line-height: 18px; padding: 0 4px; margin-right: 14px; cursor: pointer; color: #666; _padding-top: 1px; _height: 17px; _overflow: hidden; }
+	.betting_box .tab .on { background: #feac73; color: #fff; }
+	.betting_box .tab .last { margin-right: 8px; }
+	.betting_box .tab a { color: #1a66b3; _padding-top: 1px; display: inline-block; }
+	.betting_box .picbox { float: left; width: 70px; padding-top: 16px; }
+	.betting_box .content { float: left; width: 194px; padding-top: 11px; overflow: hidden; }
+	.betting_box .content .en { font-weight: bold; color: #c30; padding: 0 4px; }
+	.betting_box .content .ball_line { padding-bottom: 3px; }
+	.betting_box .ball_line span { background: url(images/sprite_ball.png); width: 23px; height: 25px; display: inline-block; font-family: Arial; color: #fff; line-height: 23px; text-align: center; font-weight: bold; margin-right: 5px; }
+	.betting_box .ball_line .blue_ball { background-position: right 0; }
+	.betting_box .ball_line .last { margin-right: 0; }
+	.betting_box .content a { color: #1a66b3; margin-right: 20px; }
+	.betting_box .btn_buy { background: url(images/sprite_ball.png) left bottom repeat-x; height: 22px; border: 0; font-size: 12px; font-weight: bold; color: #fff; cursor: pointer; margin-right: 4px; vertical-align: middle; padding-top: 1px; _padding-top: 3px; width: 70px; }
+
+	@-moz-document url-prefix(){.betting_box .btn_buy {padding-bottom:4px;}}
+	.betting_box .content li { padding: 0 0 6px 0; color: #404040; }
+	.betting_box .content li .gray { color: #878787; display: inline-block; vertical-align: middle; padding-top: 2px; *padding-top: 4px;white-space: nowrap;margin-right: 0;	}
+	.betting_box .content li .gray:hover{color: #f60; }
+	.betting_box a { color: #404040; text-decoration: none; }
+	.betting_box a:hover { color: #f60; text-decoration: underline; }
+
+	.game_box { padding: 12px 0 0 0; }
+	.game_box img { margin: 0 auto; display: block; }
+</style>
+</head>
+<body>
+<div class="phone_recharge" id="phone_recharge" style="width: 288px;">
+	<div class="head">
+		<h3 class="on"><span>话费充值</span></h3>
+		<h3><span>彩票</span></h3>
+		<h3><span>游戏</span></h3>
+		<div class="border"></div>
+	</div>
+	<div class="body">
+		<ul class="phone_box">
+			<li><span class="t">充值号码:</span>
+				<div class="input"><iframe class="num_iframe" id="num_iframe" frameborder="0"></iframe><input type="text" class="text" onkeyup="javascript:show_info()" id="input_mobile" maxlength="11" style="color: #999;" value="请输入充值号码" onfocus="javascripts:input_mobile_focus()" onblur="javascript:input_mobile_blur()" /> <span class="input_num"><span class="num_list" id="ul_zip_prompt" onmouseover="ul_zip_prompt_mouseover()" onmouseout="ul_zip_prompt_mouseout()" style="display: none;"></span><span class="num_tips" style="visibility: hidden;" id="result_input"><i></i><em>138812345678</em>北京 联通</span></span>
+					<p id="warn_input_mobile">自动充值(1-10分钟到账)</p>
+				</div>
+			</li>
+			<li><span class="t">面 值:</span>
+				<div><span class="label"><input type="radio" checked="checked" name="czje" value="100" onclick="javascript:faceValueChange(100)" />&yen;100</span><span class="label"><input type="radio" name="czje" id="face_value_check" value="0" onclick="javascript:faceValueChange(0)" />
+					<select id="face_value_select" onchange="javascript:faceValueChange(0)" onmousewheel="return false">
+						<option value="30.00">&yen;30</option>
+						<option value="50.00">&yen;50</option>
+						<option value="200.00">&yen;200</option>
+						<option value="300.00">&yen;300</option>
+						<option value="500.00">&yen;500</option>
+					</select>
+				</span></div>
+			</li>
+			<li><span class="t">售 价:</span>
+				<div><span class="en" id="searched_price">&yen;29.6 - &yen;30</span></div>
+			</li>
+			<li><input type="button" onclick="javascript:recharge();" class="button" value="立即充值" /> 简便、安全、低价</li>
+		</ul>
+	</div>
+</div>
+<div class="phone_recharge" id="Div1" style="width: 288px;">
+	<div class="head">
+		<h3><span>话费充值</span></h3>
+		<h3 class="on"><span>彩票</span></h3>
+		<h3><span>游戏</span></h3>
+		<div class="border"></div>
+	</div>
+	<div class="body">
+		<div class="betting_box">
+			<div class="tab"><span class="on">双色球</span><span>福彩3D</span><span>大乐透</span><span class="last">排列三</span><a href="#">更多&gt;&gt;</a></div>
+			<div class="picbox"><img src="images/icon_60_ssq.png" alt="" width="60" /></div>
+			<ul class="content">
+				<li>第<span class="en">20120509</span>期 </li>
+				<li class="ball_line"><span class="ball">01</span><span class="ball">1</span><span class="ball">1</span><span class="ball">20</span><span class="ball">1</span><span class="ball">1</span><span class="blue_ball last">8</span></li>
+				<li><a href="#">机选1注</a><a href="#">自助选号</a></li>
+				<li><input type="button" class="btn_buy" value="立刻购买" /><a href="#" class="gray">2元投注, 1000万回报!</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="phone_recharge" id="Div3" style="width: 288px;">
+	<div class="head">
+		<h3><span>话费充值</span></h3>
+		<h3 class="on"><span>彩票</span></h3>
+		<h3><span>游戏</span></h3>
+		<div class="border"></div>
+	</div>
+	<div class="body">
+		<div class="betting_box">
+			<div class="tab"><span>双色球</span><span class="on">福彩3D</span><span>大乐透</span><span class="last">排列三</span><a href="#">更多&gt;&gt;</a></div>
+			<div class="picbox"><img src="images/icon_60_ssq.png" alt="" width="60" /></div>
+			<ul class="content">
+				<li>第<span class="en">20120509</span>期</li>
+				<li class="ball_line"><span class="ball">1</span><span class="ball">1</span><span class="ball">1</span></li>
+				<li><a href="#">机选1注</a><a href="#">自助选号</a></li>
+				<li><input type="button" class="btn_buy" value="立刻购买" /><a href="#" class="gray">每日开奖中多少都免税</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="phone_recharge" id="Div2" style="width: 288px;">
+	<div class="head">
+		<h3><span>话费充值</span></h3>
+		<h3 class="on"><span>彩票</span></h3>
+		<div class="border"></div>
+	</div>
+	<div class="body">
+		<div class="betting_box">
+			<div class="tab"><span>双色球</span><span>福彩3D</span><span class="on">大乐透</span><span class="last">排列三</span><a href="#">更多&gt;&gt;</a></div>
+			<div class="picbox"><img src="images/icon_60_ssq.png" alt="" width="60" /></div>
+			<ul class="content">
+				<li>第<span class="en">20120509</span>期</li>
+				<li class="ball_line"><span class="ball">1</span><span class="ball">1</span><span class="ball">1</span><span class="ball">1</span><span class="ball">1</span><span class="blue_ball">1</span><span class="blue_ball last">8</span></li>
+				<li><a href="#">机选1注</a><a href="#">自助选号</a></li>
+				<li><input type="button" class="btn_buy" value="立刻购买" /><a href="#" class="gray">3元最多豪取1600万！</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="phone_recharge" id="Div4" style="width: 288px;">
+	<div class="head">
+		<h3><span>话费充值</span></h3>
+		<h3 class="on"><span>彩票</span></h3>
+		<h3><span>游戏</span></h3>
+		<div class="border"></div>
+	</div>
+	<div class="body">
+		<div class="betting_box">
+			<div class="tab"><span>双色球</span><span>福彩3D</span><span>大乐透</span><span class="last on">排列三</span><a href="#">更多&gt;&gt;</a></div>
+			<div class="picbox"><img src="images/icon_60_ssq.png" alt="" width="60" /></div>
+			<ul class="content">
+				<li>第<span class="en">20120509</span>期</li>
+				<li class="ball_line"><span class="ball">1</span><span class="ball">1</span><span class="ball">1</span></li>
+				<li><a href="#">机选1注</a><a href="#">自助选号</a></li>
+				<li><input type="button" class="btn_buy" value="立刻购买" /><a href="#" class="gray">固定奖2元最高100元！</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="phone_recharge" id="Div5" style="width: 288px;">
+	<div class="head">
+		<h3><span>话费充值</span></h3>
+		<h3><span>彩票</span></h3>
+		<h3 class="on"><span>游戏</span></h3>
+		<div class="border"></div>
+	</div>
+	<div class="body">
+		<div class="game_box"><a href="#"><img src="images" alt="" width="264" height="136" /></a></div>
+	</div>
+</div>
+</body>
+</html>

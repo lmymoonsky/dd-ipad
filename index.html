@@ -1,79 +1,1592 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="css/download_client.css"/>
+</head>
+<body class=""><!--style="background: url(images/temp/newyear_bg.jpg) center 124px no-repeat;"-->
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Dd-ipad : " />
+<div class="download_wapper" id="download_wapper">
+		<div class="mask" id="mask_area">
+		    <div class="close_mask" id="close_mask">关闭</div>
+			<img src="images/download_monster.png" alt="download_monster" width="100%" id="mask">
+			<a href="#" class="download_btn">下载</a>
+			<a href="#" class="look_btn" id="look_btn">继续浏览</a>
+		</div>
+</div>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<div class="ad_bar_top_box">
+<div class="ad_bar ad_bar_top" style="display: block;">
+	<div><a href="#"><img src="http://img4.ddimg.cn/daimage/79/79b1ddf455ea199d63673292e6e22003.gif" alt="" width="1198" height="48" /></a><a href="javascript:void(0);" class="close"></a></div>
+</div>
+</div>
+<div class="ad_bar_top_box2">
+<div class="ad_bar ad_bar_top" style="display: block;">
+	<div><a href="#"><img src="http://img4.ddimg.cn/daimage/3e/3e32edb2e833e1ac6362be71786a81ee.jpg" alt="" width="1200" height="200" /></a><a href="javascript:void(0);" class="close"></a></div>
+</div>
+</div>
+<div class="dd_client" id="dd_client">
+			<img src="images/close_20X20.png" alt="close_20X20" class="close">
+			<img src="images/logo_110X110.png" alt="logo_110X110" class="logo">
+			<div class="whether">
+				<p>当当客户端</p>
+			</div>
+			<button type="button">打开</button>
+		</div>
+<!--展开调取添加ad_bar_top_screen_up 浮动调取添加ad_bar_top_screen_fixed"
+<!--
+<div class="ad_bar_top_screen ad_bar_top_screen_fixed" id="sale_1212">
+<div class="snot_box"><div class="snot_line" id="snot_line"></div><a href="##" class="screen_light" id="screen_light"></a></div>
+<a href="#" class="snot_banner_a"><img src="images/banner1212_1200.jpg" /></a>
+<iframe src="" frameborder="0" scrolling="no"></iframe>
+<iframe src="" frameborder="0" scrolling="no" class="pic_top_iframe"></iframe>
+</div>
 
-    <title>Dd-ipad</title>
-  </head>
+<script>
 
-  <body>
+window.onload = function(){
+	var snotLine = document.getElementById('snot_line');
+	var screenLight = document.getElementById('screen_light');
+	var timer = null;
+	var iSpeed = 0;
+	var iTarget = snotLine.offsetHeight;
+	
+	function startMove(){
+		clearInterval(timer);
+		timer = setInterval(function(){	
+			iSpeed +=(iTarget - snotLine.offsetHeight)/6;
+			iSpeed *= 0.75;
+			if( Math.abs(iSpeed)<=1 && Math.abs(iTarget - snotLine.offsetHeight)<=1 ){
+				clearInterval(timer);
+				iSpeed = 0;
+				snotLine.style.height = iTarget + 'px';
+				if(iTarget <= 80){
+					iTarget = 90;startMove()
+				}else if(iTarget >= 90){
+					iTarget = 80;startMove()
+				}
+			}
+			else{
+				var H = snotLine.offsetHeight + iSpeed;
+				if(H<0){
+					H = 0;
+				}
+				snotLine.style.height = H + 'px';
+			}
+		},50);
+	}
+	startMove();
+	screenLight.onmouseover = function(){
+		clearInterval(timer);
+	};
+	screenLight.onmouseout = function(){
+		startMove();
+	};
+	//三秒关闭广告
+	setTimeout(function(){
+		//document.getElementById('sale_1212').className="ad_bar_top_screen";
+	},3000);
+};
+</script>
+-->
+<div class="ad_bar_b"><a href="#"><img src="http://img4.ddimg.cn/daimage/ef/ef3bffae327bc7fa2c21b09a6c70a28a.jpg" alt="" width="1200" height="700" /></a><a href="javascript:void(0);" class="close"><img src="images/btn_close.gif" alt="" width="61" height="17" /></a></div>
+<div id="hd">
+	<div class="tools">
+		<div class="ddnewhead_operate">
+			<ul class="ddnewhead_operate_nav">
+				<li class="ddnewhead_cart"><a href="javascript:AddToShoppingCart(0);" name="t_1">购物车<span class="cart_num">(1)</span></a></li>
+				<li class="ddnewhead_mydd"><a class="menu_btn" target="_blank" href="http://my.dangdang.com/myhome/homepage.aspx" name="t_3">我的当当</a>
+					<div class="ddnewhead_mydd_panel" style="display: none;">
+						<ul class="ddnewhead_mydd_list">
+							<li><a target="_blank" href="" name="t_3_1">我的订单</a></li>
+							<li><a target="_blank" href="" name="t_3_4">我的收藏</a></li>
+							<li><a target="_blank" href="" name="t_3_2">我的礼券</a></li>
+							<li><a target="_blank" href="" name="t_3_3">我的礼品卡</a></li>
+							<li><a target="_blank" href="" name="t_3_5">我的积分</a></li>
+							<li><a target="_blank" href="" name="t_3_6">我的评价</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a target="_blank" href="http://order.dangdang.com/myallorders.aspx" name="t_2">手机当当</a></li>
+				<li><a class="menu_btn" target="_blank" href="http://order.dangdang.com/myallorders.aspx" name="t_2">企业采购</a>
+					<div style="display: none;">
+						<ul>
+							<li><a target="_blank" href="" name="">大宗购物</a></li>
+							<li><a target="_blank" href="" name="">礼品卡采购</a></li>
+							<li><a target="_blank" href="" name="">礼品卡激活</a></li>
+							<li><a target="_blank" href="" name="">礼品卡使用</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a class="menu_btn" target="_blank" href="" name="">自助服务</a>
+					<div style="display: none;">
+						<ul>
+							<li><a target="_blank" href="" name="">订单查询与修改</a></li>
+							<li><a target="_blank" href="" name="">自助取消订单</a></li>
+							<li><a target="_blank" href="" name="">订单配送查询</a></li>
+							<li><a target="_blank" href="" name="">自助退货申请</a></li>
+							<li><a target="_blank" href="" name="">自助换货申请</a></li>
+							<li><a target="_blank" href="" name="">退换货进度查询</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a class="menu_btn" target="_blank" href="" name="">投诉与建议</a>
+					<div style="display: none;">
+						<ul>
+							<li><a target="_blank" href="" name="">我要投诉</a></li>
+							<li><a target="_blank" href="" name="">意见建议</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a class="menu_btn" target="_blank" href="" name="">当当客服</a>
+					<div style="display: none;">
+						<ul>
+							<li><a target="_blank" href="" name="">自助客服</a></li>
+							<li><a target="_blank" href="" name="">邮件客服</a></li>
+							<li><a target="_blank" href="" name="">微博客服</a></li>
+							<li><a target="_blank" href="" name="">电话客服</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<p><a class="collect" href="#"><span class="c"></span><span class="t">收藏当当</span></a><span class="gray">|</span>欢迎光临当当网，请<a class="login_link" target="_self" href="https://login.dangdang.com/signin.aspx?returnurl=http%3A//www.dangdang.com/" name="zt_denglu">登录</a><a class="login_link" target="_self" href="https://login.dangdang.com/Register.aspx" name="zt_zhuce">免费注册</a></p>
+		</div>
+	</div>
+	<div class="logo_line">
+		<div class="logo"><a href="#"><img src="images/dangdang_logo.jpg" width="101" height="48" alt="" /></a><a href="#"><img src="images/vdangdang-slice.gif" alt="" /></a></div>
+		<ul class="menu">
+			<li class="first"><a href="#">尾品汇<span class="icon_n"><img src="images/temp/icon_discount.png" width="45" height="16" alt="" /></span></a></li>
+			<li class="on"><a href="#">奥特莱斯</a></li>
+			<li><a href="#">东森百货<span class="icon_n"><img src="images/temp/icon_hot_2.png" width="26" height="14" alt="" /></span></a></li>
+			<li><a href="#">当当优品</a></li>
+			<li><a href="#">商店街</a></li>
+		</ul>
+	</div>
+	<div class="nav_top">
+		<ul>
+			<li class="on"><a href="#">首页</a></li>
+			<li><a href="#">图书</a></li>
+			<li><a href="#">孕婴童</a></li>
+			<li><a href="#">美妆</a></li>
+			<li><a href="#">家居</a></li>
+			<li><a href="#">食品</a></li>
+			<li><a href="#">酒</a><span class="icon_n"><img src="http://img4.ddimg.cn/00109/icon/icon_new_2.png" width="26" height="14" alt="" /></span></li>
+			<li><a href="#">保健</a></li>
+			<li><a href="#">运动</a></li>
+			<li><a href="#">户外</a><span class="icon_n"><img src="http://img4.ddimg.cn/00109/icon/icon_bright.gif" width="30" height="19" alt="" /></span></li>
+			<li><a href="#">手机</a><span class="icon_n"><img src="http://img4.ddimg.cn/00109/icon/icon_hot_2.png" width="26" height="14" alt="" /></span></li>
+			<li><a href="#">数码</a></li>
+			<li><a href="#">电脑</a></li>
+			<li><a href="#">音乐</a></li>
+			<li><a href="#">影音</a></li>
+			<li><a href="#">数字馆</a></li>
+			<li><a href="#">服装</a></li>
+			<li><a href="#">内衣</a></li>
+			<li><a href="#">箱包</a></li>
+			<li><a href="#">饰品</a></li>
+			<li><a href="#">手表</a></li>
+			<li><a href="#">珠宝</a></li>
+		</ul>
+	</div>
+	<div class="search_box"><a href="#" class="sort_button"><span class="new_pub_line_b"></span>全部商品分类</a>
+		<div class="search" style="display: none;">
+			<form>
+			    <label class="label_search">sssss</label><input type="text" class="text" /><span class="select">全部分类<span class="icon"></span>
+				<div class="select_pop" style="display: none;"><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a><a href="#">商品</a></div>
+			</span>
+			</form>
+			<input type="button" class="button btn" />			
+			<a href="#" class="search_btn">高级搜索</a><span class="hot">热搜: <a href="#" class="or">polo衫</a><a href="#">polo衫</a><a href="#">polo衫</a><a href="#">polo衫</a><a href="#">polo衫</a><a href="#">polo衫</a><a href="#">polo衫</a><a href="#">polo衫</a><a href="#">polo衫</a></span></div>
+		<div class="search">
+			<form id="form_search_new" onSubmit="return searchsubmit();" method="get" name="searchform" action="http://search.dangdang.com/search.php">
+			<label class="label_search">sssss</label><input onBlur="if(this.value==''){this.value=''}" id="key_S" class="text gray" name="key" autocomplete="off"><span class="select"><span id="Show_Category_Name">全部分类</span><span class="icon"></span>
+				<div style="DISPLAY: none" id="search_all_category" class="select_pop"><a onClick="selectCategory('',this);" href="#"><span id="SPAN2">全部分类</span></a><a onClick="selectCategory('01.00.00.00.00.00',this);" href="#"><span>图书</span></a><a onClick="selectCategory('03.00.00.00.00.00',this);" href="#"><span>音像</span></a><a onClick="selectCategory('05.00.00.00.00.00',this);" href="#"><span>影视</span></a><a onClick="selectCategory('98.00.00.00.00.00',this);" href="#"><span>数字商品</span></a><a onClick="selectCategory(4000005,this);" href="#"><span>时尚美妆</span></a><a onClick="selectCategory(4000003,this);" href="#"><span>母婴用品</span></a><a onClick="selectCategory(4000014,this);" href="#"><span>玩具</span></a><a onClick="selectCategory(4000003,this);" href="#"><span>孕婴服饰</span></a><a onClick="selectCategory(4000003,this);" href="#"><span>童装童鞋</span></a><a onClick="selectCategory(4000002,this);" href="#"><span>家居日用</span></a><a onClick="selectCategory(4000009,this);" href="#"><span>家具装饰</span></a><a onClick="selectCategory(4000007,this);" href="#"><span>服装</span></a><a onClick="selectCategory(4000007,this);" href="#"><span>鞋</span></a><a onClick="selectCategory(4000011,this);" href="#"><span>箱包皮具</span></a><a onClick="selectCategory(4000010,this);" href="#"><span>手表饰品</span></a><a onClick="selectCategory(4000007,this);" href="#"><span>运动户外</span></a><a onClick="selectCategory(4000015,this);" href="#"><span>汽车用品</span></a><a onClick="selectCategory(4000006,this);" href="#"><span>食品</span></a><a onClick="selectCategory(4000001,this);" href="#"><span>手机数码</span></a><a onClick="selectCategory(4000013,this);" href="#"><span>电脑办公</span></a><a onClick="selectCategory(4000012,this);" href="#"><span>家电</span></a></div>
+			</span><input style="DISPLAY: none" id="search_btn" value="提交查询内容" type="submit"> <input style="DISPLAY: none" id="SearchFromTop" name="SearchFromTop" value="1" type="hidden"> <input style="DISPLAY: none" id="suggest_product_btn" onClick="void (0)" name="suggestproduct_btn" type="button"> <input style="DISPLAY: none" id="suggest_class_btn" onClick="	void (0)" name="suggestclass_btn" type="button"> <input style="DISPLAY: none" id="suggest_searchkey_btn" name="suggestsearchkey_btn" value="提交查询内容" type="submit"> <input id="catalog_S" name="catalog" type="hidden">
+			</form>
+			<input class="button btn" onClick="javascript: document.getElementById('search_btn').click();" type="button">
+			<!-- 购物清单开始 -->
+			<div class="shopping_list_wrap"> <!-- 通过添加shopping_list_hover控制显示隐藏 具体见doc域 -->
+				<div class="shopping_list ">
+					<span class="icon_book"></span>
+					<span class="icon_arrow"></span>
+					<span>批量搜索</span>
+				</div>	
+			</div>
+		    <!-- 购物清单结束 -->	
+			<a class="search_btn" href="http://search.dangdang.com/AdvanceSearch/AdvanceSearch.aspx?c=0" name="ddnav_adv_s" target="_blank">高级搜索</a><span class="hot">热搜: <a href="http://search.dangdang.com/search.php?key=%D3%E3%D7%EC&amp;type=hot&amp;catalog=" name="hotword" target="_blank">鱼嘴</a><a href="http://search.dangdang.com/search.php?key=%CA%D6%BB%FA&amp;type=hot&amp;catalog=" name="hotword" target="_blank">手机</a><a href="http://search.dangdang.com/search.php?key=%B4%CA%B5%E4&amp;type=hot&amp;catalog=" name="hotword" target="_blank">词典</a></span></div>
+		<div style="display: block;" id="suggest_key" class="suggest_key">
+			<ul>
+				<li><span></span><strong>考试</strong></li>
+			</ul>
+			<div class="clear"></div>
+			<ul class="select_key_sort">
+				<li value="1" class="select_key"><span class="d"></span>在 <strong>考试</strong> 中搜</li>
+				<li value="2"><span class="d"></span>在 <strong>考试</strong> 中搜</li>
+			</ul>
+			<ul>
+				<li value="3" class="select_key"><span class="d">约18825个结果</span><div class="arrow">
+					<div>2010</div>
+				</div>
+					<div class="select_pop">
+						<p class="name"><a href="#">优购网上鞋城优购网上鞋城优购网上鞋</a></p>
+						<a href="#" class="pic"><img src="images/temp/210_148.jpg" alt="" width="90" height="90" /></a> 						<!-- 8-2 改图片尺寸 -->
+						<div class="content">
+							<div class="sun"><span class="level"></span></div>
+							<p><span class="t">所 在 地:</span> 北京</p>
+							<p><span class="t">服务保障:</span> <span class="serve_t"><img src="images/key_icon_01.png" alt="" />七天退货</span><span class="serve_t"><img src="images/key_icon_02.png" alt="" />货到付款</span></p>
+							<p class="button"><a href="#" class="btn">进入店铺</a></p>
+						</div>
+						<div class="content">
+							<div class="star"><span class="level"></span></div>
+							<p>服务保</p>
+							<p>服务保北京</p>
+							<p><span class="t">参考价:</span> <span class="price">&yen;15.5</span> <span class="price_d">&yen;15.2</span></p>
+							<p class="button"><a href="#" class="btn">加入购物车</a></p>
+						</div>
+					</div>
+					<div class="select_pop" style="display: none;">
+						<p class="name"><a href="#">优购网上鞋城优购网上鞋城优购网上鞋</a></p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/lmymoonsky/dd-ipad">View on GitHub</a>
-
-          <h1 id="project_title">Dd-ipad</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/lmymoonsky/dd-ipad/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/lmymoonsky/dd-ipad/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+						<p><span class="t">时间:</span> 2013.3.15 9:00至2013.3.20 10:00</p>
+						<p><span class="t">时间:</span> 食品、百货</p>
+						<div class="content">
+							<p class="button"><a href="#" class="btn">加入专题</a></p>
+						</div>
+					</div>
+				</li>
+				<li value="4"><span class="d">约108个结果</span><div class="arrow">
+					<div>2010</div>
+				</div>
+				</li>
+				<li value="5"><span class="d">约10890个结果</span>2011</li>
+				<li value="6"><span class="d">约4304个结果</span>2011春装</li>
+				<li value="7"><span class="d">约290个结果</span>考研英语考研英语</li>
+				<li value="8"><span class="d">约929个结果</span>2011公务员</li>
+				<li class="select_key" value="9"><span class="d">约1239个结果</span>2012</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="bd">
+	<div class="new_pub_nav_box">
+    <span class="new_pub_line_a"></span>
+    <span class="new_pub_line_b"></span>
+    <div class="new_pub_nav_shadow">
+		<ul class="new_pub_nav">
+			<li class="n_b first"><span class="nav"><a href="#">尾品汇</a></span><span class="sign"></span></li>
+			<li class="n_b"><span class="nav"><a href="#">图书</a>、<a href="#">音像</a>、<a href="#">数字馆</a></span><span class="sign"></span></li>
+			<li class="n_b"><span class="nav"><a href="#">孕</a>、<a href="#">婴</a>、<a href="#">童</a></span><span class="sign"></span></li>
+			<li class="n_b"><span class="nav"><a href="#">美妆个护</a></span><span class="sign"></span></li>
+			<li class="n_b"><span class="nav"><a href="#">服饰</a>、<a href="#">内衣</a></span><span class="sign"></span></li>
+			<li class="n_b"><span class="nav"><a href="#">鞋靴</a>、<a href="#">箱包</a></span><span class="sign"></span></li>
+      <li class="n_b"><span class="nav"><a href="#">家居</a>、<a href="#">家纺</a>、<a href="#">家装</a>、<a href="#">家具</a></span><span class="sign"></span></li>
+			<li class="n_b"><span class="nav"><a href="#">珠宝饰品</a></span><span class="sign"></span></li>
+			<li class="n_b"><span class="nav"><a href="#">手表/眼镜/礼品</a></span><span class="sign"></span></li>
+      <li class="n_b"><span class="nav"><a href="#">运动户外</a></span><span class="sign"></span></li>
+      <li class="n_b"><span class="nav"><a href="#">手机</a>、<a href="#">数码</a>、<a href="#">电脑</a></span><span class="sign"></span></li>
+			<li class="n_b"><span class="nav"><a href="#">康体/保健/成人</a></span><span class="sign"></span></li>
+			<li class="n_b"><span class="nav"><a href="#">食品</a>、<a href="#">茶</a>、<a href="#">酒</a></span><span class="sign"></span></li>
+			<li class="n_b"><span class="nav"><a href="#">手机</a>、<a href="#">数码</a></span><span class="sign"></span></li>
+			<li class="all"><span class="nav"><a href="#">全部商品分类</a></span></li>
+			<div class="new_pub_nav_pop" style="display:none;height:452px;"><!--最大高度452px-->
+        <i class="new_pub_nav_pop_close"></i>
+        <ul class="left left_01"><!--li高亮调取class="light"分类高亮调取class="hot"--><li class="light"><h4><a href="#">服装服饰</a></h4><div class="e"><a href="#" class="hot">VIISHOW</a><a href="#">黛莉琪</a><a href="#">高筒靴 </a><a href="#">Crucco初刻</a><a href="#">贵人鸟</a><a href="#">VIISHOW</a><a href="#">黛莉琪</a><a href="#">高筒靴 </a><a href="#">Crucco初刻 </a><a href="#">贵人鸟</a></div><h3>品牌：</h3><div class="e"><a href="#">ONLY</a><a href="#">ESEY/逸阳</a><a href="#">三彩</a><a href="#">裂帛</a><a href="#">江南布衣</a><a href="#">VEROMODA</a></div></li><li><h4><a href="#">服装服饰</a></h4><div class="e"><a href="#">VIISHOW</a><a href="#">黛莉琪</a><a href="#">高筒靴 </a><a href="#">Crucco初刻 </a><a href="#">贵人鸟</a></div><h3>品牌：</h3><div class="e"><a href="#">ONLY</a><a href="#">ESEY/逸阳</a><a href="#">三彩</a><a href="#">裂帛</a><a href="#">江南布衣</a><a href="#">VEROMODA</a></div></li></ul>
+        <ul class="left left_02"><li><h4><a href="#">服装服饰</a></h4><div class="e"><a href="#">VIISHOW</a><a href="#">黛莉琪</a><a href="#">高筒靴 </a><a href="#">Crucco初刻 </a><a href="#">贵人鸟</a><a href="#">贵人鸟</a></div><h3>品牌：</h3><div class="e"><a href="#">ONLY</a><a href="#">ESEY/逸阳</a><a href="#">三彩</a><a href="#">裂帛</a><a href="#">江南布衣</a><a href="#">VEROMODA</a></div></li><li><h4><a href="#">服装服饰</a></h4><div class="e"><a href="#">VIISHOW</a><a href="#">黛莉琪</a><a href="#">高筒靴 </a><a href="#">Crucco初刻 </a><a href="#">贵人鸟</a><a href="#">贵人鸟</a></div><h3>品牌：</h3><div class="e"><a href="#">ONLY</a><a href="#">ESEY/逸阳</a><a href="#">三彩</a><a href="#">裂帛</a><a href="#">江南布衣</a><a href="#">VEROMODA</a></div></li></ul>
+        <ul class="left left_03"><li><h4><a href="##">服装服饰无123</a></h4><div class="e"><a href="#">VIISHOW</a><a href="#">黛莉琪</a><a href="#">高筒靴 </a><a href="#">Crucco初刻 </a><a href="#">贵人鸟</a><a href="#">贵人鸟</a></div><h3>品牌：</h3><div class="e"><a href="#">ONLY</a><a href="#">ESEY/逸阳</a><a href="#">三彩</a><a href="#">裂帛</a><a href="#">江南布衣</a><a href="#">VEROMODA</a></div></li>
+        <div class="new_pub_pop_guan"><a href="##">鞋靴馆</a><a href="##">鞋靴馆</a><a href="##">鞋靴馆</a></div><div class="new_pub_pop_img"><a href="#"><img src="images/temp/ad_pic_r.jpg" width="288" height="119" title="宽高为215px*75或212*205，此为示意图" /></a></div>
+        </ul>
+        </div>
+		</ul>
     </div>
+	</div>
+	<div class="mian_col2">
+		<div class="focus_box">
+			<ul class="pic">
+				<li><a href="#"><img src="images/temp/pic4.jpg" width="700" height="290" alt="" /></a></li>
+			</ul>
+			<ul class="tab">
+				<li class="on">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+			</ul>
+		</div>
+		<div class="week_box">
+			<h3>本周特惠</h3>
+			<div class="body">
+				<div class="arrow_l"></div>
+				<div class="arrow_r"></div>
+				<div class="overflow">
+					<ul style="width: 12000px;">
+						<li><a href="#"><img src="http://img4.ddimg.cn/00131/pic/c4-0601.jpg" width="164" height="84" alt="" /></a></li>
+						<li><a href="#"><img src="http://img4.ddimg.cn/00131/pic/c4-0601.jpg" width="164" height="84" alt="" /></a></li>
+						<li><a href="#"><img src="http://img4.ddimg.cn/00131/pic/c4-0601.jpg" width="164" height="84" alt="" /></a></li>
+						<li class="last"><a href="#"><img src="http://img4.ddimg.cn/00131/pic/c4-0601.jpg" width="164" height="84" alt="" /></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="aside">
+		<div class="postbox">
+			<div class="help"><a href="#"><img src="images/temp/post_pic2.png" /></a></div>
+			<div class="head">
+				<h3><span class="first now">促销公告</span><span class="">服务公告</span></h3></div>
+			<ul class="list">
+				<li><a href="#" class="or">当当网运费调整公告当当网运费调整公告</a></li>
+				<li><a href="#">当当网运费调整公告</a></li>
+				<li><a href="#">当当网运费调整公告</a></li>
+				<li><a href="#">当当网运费调整公告</a></li>
+				<li><a href="#">当当网运费调整公告</a></li>
+				<li><a href="#">当当网运费调整公告</a></li>
+				<li><a href="#">当当网运费调整公告</a></li>
+				<li><a href="#">当当网运费调整公告</a></li>
+			</ul>
+		</div>
+		<div class="phone_recharge">
+			<div class="head">
+				<h3><span>手机充值</span></h3>
+				<h3 class="on"><span>彩票</span></h3>
+				<div class="border"></div>
+			</div>
+			<div class="body">
+				<iframe src="http://mobilerecharge.dangdang.com/dd_sjcz.html" id="shenghuofuwu_iframe" width="288" height="160" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+			</div>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="section taday_flash bbox">
+		<div class="head">
+			<h3>今日闪价<span>每日更新</span></h3>
+			<ul class="tab">
+				<li class="on">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+		<div class="tab_c">
+			<ul class="shoplist">
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					<div class="icon_pop">icon_box</div>
+				</li>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+				</li>
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+				</li>
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+				</li>
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+				</li>
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+				</li>
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="aside">
+		<div class="taday_event">
+			<div class="head">
+				<h3>本周活动</h3>
+				<div class="tab_icon"><span class="number"><span>1</span>/2</span><span class="arrow_l"></span><span class="arrow_r"></span></div>
+			</div>
+			<ul class="ad_list">
+				<li><a href="#"><img src="images/temp/pic3.jpg" width="288" height="125" alt="" /></a></li>
+				<li><a href="#"><img src="images/temp/pic3.jpg" width="288" height="125" alt="" /></a></li>
+				<li><a href="#"><img src="images/temp/pic3.jpg" width="288" height="125" alt="" /></a></li>
+				<li><a href="#"><img src="images/temp/pic3.jpg" width="288" height="125" alt="" /></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="ad_bar">
+		<ul class="tab">
+			<li class="on">食 品</li>
+			<li>母 婴</li>
+			<li>3</li>
+		</ul>
+		<div class="tab_c">
+			<div class="content"><a href="#"><img src="images/temp/ad_pic_l.jpg" alt="" width="1198" height="125" /><i class="icon_ad" style="position: absolute; right: 0; bottom: 0; _bottom: 20px; width: 40px; height: 40px; background: #f00;"></i></a></div>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<!--0607-->
+	<div id="" class="section ulike bbox">
+		<div class="head">
+			<h3>猜您喜欢</h3>
+		</div>
+		<div id="" class="tab_c">                        
+			<ul style="display: block;" class="shoplist">
+				<li>
+					<a class="pic" title="" target="_blank" href="/"><img width="150" height="150" alt="" src="http://img32.ddimg.cn/80/26/1335587102-1_l.jpg" style="display: block;"></a>
+					<p class="name"><a title="" target="_blank" href="/">希利尔讲世界史、世界地理、艺术史<span class="color">高清全彩权威典藏版</span></a></p>
+					<p><span class="price_n">￥62.40</span><span class="rice_r">￥124.8</span></p>
+				</li>
+				<li>
+					<a class="pic" title="" target="_blank" href="/"><img width="150" height="150" alt="" src="http://img32.ddimg.cn/80/26/1335587102-1_l.jpg" style="display: block;"></a>
+					<p class="name"><a title="" target="_blank" href="/">希利尔讲世界史、世界地理、艺术史<span class="color">高清全彩权威典藏版</span></a></p>
+					<p><span class="price_n">￥62.40</span><span class="rice_r">￥124.8</span></p>
+				</li>
+				<li>
+					<a class="pic" title="" target="_blank" href="/"><img width="150" height="150" alt="" src="http://img32.ddimg.cn/80/26/1335587102-1_l.jpg" style="display: block;"></a>
+					<p class="name"><a title="" target="_blank" href="/">希利尔讲世界史、世界地理、艺术史<span class="color">高清全彩权威典藏版</span></a></p>
+					<p><span class="price_n">￥62.40</span><span class="rice_r">￥124.8</span></p>
+				</li>
+				<li>
+					<a class="pic" title="" target="_blank" href="/"><img width="150" height="150" alt="" src="http://img32.ddimg.cn/80/26/1335587102-1_l.jpg" style="display: block;"></a>
+					<p class="name"><a title="" target="_blank" href="/">希利尔讲世界史、世界地理、艺术史<span class="color">高清全彩权威典藏版</span></a></p>
+					<p><span class="price_n">￥62.40</span><span class="rice_r">￥124.8</span></p>
+				</li>
+				<li>
+					<a class="pic" title="" target="_blank" href="/"><img width="150" height="150" alt="" src="http://img32.ddimg.cn/80/26/1335587102-1_l.jpg" style="display: block;"></a>
+					<p class="name"><a title="" target="_blank" href="/">希利尔讲世界史、世界地理、艺术史<span class="color">高清全彩权威典藏版</span></a></p>
+					<p><span class="price_n">￥62.40</span><span class="rice_r">￥124.8</span></p>
+				</li>
+				<li>
+					<a class="pic" title="" target="_blank" href="/"><img width="150" height="150" alt="" src="http://img32.ddimg.cn/80/26/1335587102-1_l.jpg" style="display: block;"></a>
+					<p class="name"><a title="" target="_blank" href="/">希利尔讲世界史、世界地理、艺术史<span class="color">高清全彩权威典藏版</span></a></p>
+					<p><span class="price_n">￥62.40</span><span class="rice_r">￥124.8</span></p>
+				</li>
+				<li>
+					<a class="pic" title="" target="_blank" href="/"><img width="150" height="150" alt="" src="http://img32.ddimg.cn/80/26/1335587102-1_l.jpg" style="display: block;"></a>
+					<p class="name"><a title="" target="_blank" href="/">希利尔讲世界史、世界地理、艺术史<span class="color">高清全彩权威典藏版</span></a></p>
+					<p><span class="price_n">￥62.40</span><span class="rice_r">￥124.8</span></p>
+				</li>
+			</ul>
+			<div class="cover boxcaption ico-lt">
+				<span class="tleft">left</span>
+			</div>
+			<div class="cover boxcaption ico-rt">
+				<span class="tright">right</span>
+			</div>
+		</div>
+	</div>
+<!--0607 end-->
+	<div class="spacer"></div>
+  <!--a版-->
+	<div class="outlets_box">
+    <a href="" class="p_1"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+    <a href="" class="p_2"><img src="images/temp/pic_236x244.jpg" alt="111" title="111" /></a>
+    <a href="" class="p_3"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_4_1"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_4_2"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_5"><img src="images/temp/pic_236x244.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_6_1"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_6_2"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_7"><img src="images/temp/pic_236x244.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_8_1"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_8_2"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_9"><img src="images/temp/pic_236x244.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_10"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_11_1"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_11_2"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_12_1"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_12_2"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_13"><img src="images/temp/pic_236x244.jpg" alt="111" title="111" /></a>
+	</div>
+	<div class="spacer"></div>
+  <!--b版-->
+	<div class="outlets_box">
+    <a href="" class="b_1"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+    <a href="" class="b_2"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+    <a href="" class="b_3"><img src="images/temp/pic_236x244.jpg" alt="111" title="111" /></a>
+    <a href="" class="b_4_1"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="b_4_2"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="b_4_3"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="b_5"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="b_6"><img src="images/temp/pic_236x244.jpg" alt="111" title="111" /></a>
+		<a href="" class="b_7_1"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="b_7_2"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="b_7_3"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="b_8_1"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="b_8_2"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_9"><img src="images/temp/pic_236x244.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_10"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_11_1"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_11_2"><img src="images/temp/pic_116x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_12_1"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_12_2"><img src="images/temp/pic_236x120.jpg" alt="111" title="111" /></a>
+		<a href="" class="p_13"><img src="images/temp/pic_236x244.jpg" alt="111" title="111" /></a>
+	</div>
+	<div class="spacer"></div>
+	<div class="bbox limitbox">
+		<div class="head">
+			<h3>限时抢购</h3>
+		</div>
+		<ul class="shoplist">
+			<li class="hover">
+				<div class="time">抢购结束! <a href="#" class="or">刷新</a></div>
+				<div class="pic"><a href="#"><img src="http://img34.ddimg.cn/68/1/60328094-1_l.jpg" width="150" height="150" alt="" /></a></div>
+				<p class="name"><a href="http://static.dangdang.com/topic_custom/fashion/2303_227224.shtml" target="_blank" title="新款天然红玛瑙108颗佛珠手链|双12节节高升 鸿运当头">新款天然红玛瑙108颗佛珠手链<span class="color">双12节节高升 鸿运当头</span></a></p>
+				<p class="price">抢购价：<span class="price_n">￥181.0</span></p>
+			</li>
+			<li>
+				<div class="time">剩余<span>00</span>小时<span>13</span>分<span>48</span>秒</div>
+				<div class="pic"><a href="#"><img src="http://img34.ddimg.cn/68/1/60328094-1_l.jpg" width="150" height="150" alt="" /></a></div>
+				<p class="name"><a href="http://static.dangdang.com/topic_custom/fashion/2303_227224.shtml" target="_blank" title="新款天然红玛瑙108颗佛珠手链|双12节节高升 鸿运当头">新款天然红玛瑙108颗佛珠手链<span class="color">双12节节高升 鸿运当头</span></a></p>
+				<p class="price">抢购价：<span class="price_n">￥181.0</span></p>
+			</li>
+			<li>
+				<div class="time">剩余<span>00</span>小时<span>13</span>分<span>48</span>秒</div>
+				<div class="pic"><a href="#"><img src="http://img34.ddimg.cn/68/1/60328094-1_l.jpg" width="150" height="150" alt="" /></a></div>
+				<p class="name"><a href="http://static.dangdang.com/topic_custom/fashion/2303_227224.shtml" target="_blank" title="新款天然红玛瑙108颗佛珠手链|双12节节高升 鸿运当头">新款天然红玛瑙108颗佛珠手链<span class="color">双12节节高升 鸿运当头</span></a></p>
+				<p class="price">抢购价：<span class="price_n">￥181.0</span></p>
+			</li>
+			<li class="hover">
+				<div class="time">剩余<span>00</span>小时<span>13</span>分<span>48</span>秒</div>
+				<div class="pic"><a href="#"><img src="http://img34.ddimg.cn/68/1/60328094-1_l.jpg" width="150" height="150" alt="" /></a></div>
+				<p class="name"><a href="http://static.dangdang.com/topic_custom/fashion/2303_227224.shtml" target="_blank" title="新款天然红玛瑙108颗佛珠手链|双12节节高升 鸿运当头">新款天然红玛瑙108颗佛珠手链<span class="color">双12节节高升 鸿运当头</span></a></p>
+				<p class="price">抢购价：<span class="price_n">￥181.0</span></p>
+			</li>
+			<li class="hover">
+				<div class="time">剩余<span>00</span>小时<span>13</span>分<span>48</span>秒</div>
+				<div class="pic"><a href="#"><img src="http://img34.ddimg.cn/68/1/60328094-1_l.jpg" width="150" height="150" alt="" /></a></div>
+				<p class="name"><a href="http://static.dangdang.com/topic_custom/fashion/2303_227224.shtml" target="_blank" title="新款天然红玛瑙108颗佛珠手链|双12节节高升 鸿运当头">新款天然红玛瑙108颗佛珠手链<span class="color">双12节节高升 鸿运当头</span></a></p>
+				<p class="price">抢购价：<span class="price_n">￥181.0</span></p>
+			</li>
+		</ul>
+	</div>
+	<div class="bbox tuanbox">
+		<div class="head">
+			<div class="tab_icon"><span class="number"><span>1</span>/2</span><span class="arrow_l"></span><span class="arrow_r"></span></div>
+			<h3>团购</h3>
+		</div>
+		<div class="tab_c ">
+			<ul class="shoplist" style="width: 10000px;">
+				<li><a href="#" class="pic"><img src="images/temp/270_190.jpg" width="270" height="190" alt="" /></a>
+					<p class="name"><a href="#">哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣</a></p>
+					<p class="price"><span class="price_n"><span>&yen;</span>9000</span><span class="rice_r">原价：&yen;12000</span></p>
+					<p class="btn_box"><a href="#" class="btn">去看看</a><span class="data"><span>123499 </span>人已购买</span></p>
+				</li>
+				<li><a href="#" class="pic"><img src="images/temp/270_190.jpg" width="270" height="190" alt="" /></a>
+					<p class="name"><a href="#">哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣</a></p>
+					<p class="price"><span class="price_n"><span>&yen;</span>9000</span><span class="rice_r">原价：&yen;12000</span></p>
+					<p class="btn_box"><a href="#" class="btn">去看看</a><span class="data"><span>123499 </span>人已购买</span></p>
+				</li>
+				<li><a href="#" class="pic"><img src="images/temp/270_190.jpg" width="270" height="190" alt="" /></a>
+					<p class="name"><a href="#">哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣</a></p>
+					<p class="price"><span class="price_n"><span>&yen;</span>9000</span><span class="rice_r">原价：&yen;12000</span></p>
+					<p class="btn_box"><a href="#" class="btn">去看看</a><span class="data"><span>123499 </span>人已购买</span></p>
+				</li>
+				<li class="last"><a href="#" class="pic"><img src="images/temp/270_190.jpg" width="270" height="190" alt="" /></a>
+					<p class="name"><a href="#">哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣哥伦比亚Columbia 新款男风衣</a></p>
+					<p class="price"><span class="price_n"><span>&yen;</span>9000</span><span class="rice_r">原价：&yen;12000</span></p>
+					<p class="btn_box"><a href="#" class="btn">去看看</a><span class="data"><span>123499 </span>人已购买</span></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="abox newbox">
+		<div class="head">
+			<h3><a href="#" class="link"><img src="images/" alt="" /></a></h3>
+			<ul class="tab">
+				<li class="on">图书</li>
+				<li>孕婴童</li>
+				<li>服装</li>
+				<li>家居</li>
+			</ul>
+		</div>
+		<div class="tab_c">
+			<ul class="shoplist">
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					<div class="icon_pop">icon_box</div>
+				</li>
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+				</li>
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+				</li>
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+				</li>
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+				</li>
+				<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" width="150" height="150" alt="" /></a>
+					<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+					<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="spacer"></div>
+  <div class="temp_clothing">
+    <div class="navigation">
+      <h4><a href="#"><img src="images/fuzhang/title_fuzhuang.gif" /></a></h4>
+      <div class="side_nav"><a href="##">文字标题1</a><a href="##">文字标题2</a><a href="##">文字标题3</a><a href="##">文字标题4</a><a href="##">文字标题5</a><a href="##">文字标题6</a><a href="##">文字标题7</a><a href="##">文字标题8</a><a href="##">文字标题9</a><a href="##">文字标题10</a><a href="##">文字标题11</a><a href="##">文字标题12</a></div>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Dd-ipad maintained by <a href="https://github.com/lmymoonsky">lmymoonsky</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
+    <div class="temp_clothing_mode temp_clothing_blue">
+      <div class="pic"><a href="#"><img src="images/fuzhang/fz_shoes.gif" /></a><a href="#"><img src="images/fuzhang/fz_bags.gif" /></a></div>
+      <ul class="center_logo">
+        <li><a href="#"><img src="images/fuzhang/fz_logo_blue.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_blue.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_blue.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_blue.gif" /></a></li>
+        <li><a href="#"><img src="images/fuzhang/fz_logo_blue.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_blue.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_blue.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_blue.gif" /></a></li>
+      </ul>
+      <div class="center_pic">
+        <a href="##"><img src="images/fuzhang/fz_men.gif" /></a>
+      </div>
+      <div class="bottom_logo"><a href="#"><img src="images/fuzhang/fz_logo_blue.gif" width="100" height="100"></a><a href="#"><img src="images/fuzhang/fz_logo_blue.gif" width="100" height="100"></a></div>
     </div>
+    <div class="temp_clothing_mode temp_clothing_red">
+      <div class="pic"><a href="#"><img src="images/fuzhang/fz_underwear.gif" /></a><a href="#"><img src="images/fuzhang/fz_cashmere.gif" /></a></div>
+      <ul class="center_logo">
+        <li><a href="#"><img src="images/fuzhang/fz_logo_red.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_red.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_red.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_red.gif" /></a></li>
+        <li><a href="#"><img src="images/fuzhang/fz_logo_red.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_red.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_red.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_red.gif" /></a></li>
+      </ul>
+      <div class="center_pic">
+        <a href="##"><img src="images/fuzhang/fz_women.gif" /></a>
+      </div>
+      <div class="bottom_logo"><a href="#"><img src="images/fuzhang/fz_logo_red.gif" /></a><a href="#"><img src="images/fuzhang/fz_logo_red.gif" /></a></div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+	<div class="abox baby_mode">
+		<div class="section">
+			<h3><a href="#"><img src="http://img3.ddimg.cn/00130/4534534/yytpic.png" alt="" /></a></h3>
+			<ul class="tab">
+				<li class="on"><a href="#">护肤</a></li>
+				<li><a href="#">护肤护护护</a></li>
+				<li>护肤护肤护肤</li>
+				<li>护肤护肤护肤</li>
+			</ul>
+			<div class="tab_c">
+				<div class="showbox">
+					<ul class="picbox">
+						<li><a href="#"><img src="images/temp/pic6.jpg" width="900" height="230" alt="" /></a></li>
+					</ul>
+					<ul class="tab_i">
+						<li class="on">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+				</div>
+				<ul class="shoplist">
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="aside">
+			<div class="head">
+				<h3>推荐品牌</h3>
+				<div class="tab_icon"><span class="number"><span>1</span>/2</span><span class="arrow_l"></span><span class="arrow_r"></span></div>
+			</div>
+			<div class="list_box">
+				<ul class="list">
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="ad_bar">
+		<ul class="tab">
+			<li class="on">食 品</li>
+			<li>母 婴</li>
+			<li>3</li>
+		</ul>
+		<div class="tab_c">
+			<div class="content"><a href="#"><img src="images/temp/ad_pic_l.jpg" alt="" width="1198" height="125" /></a></div>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="abox fashion_mode">
+		<div class="section">
+			<h3><a href="#"><img src="http://img3.ddimg.cn/00130/4534534/xds_nfs.png" alt="" /></a></h3>
+			<ul class="tab">
+				<li class="on">护肤</li>
+				<li>护肤</li>
+			</ul>
+			<div class="tab_c">
+				<div class="showbox">
+					<ul class="tab_i">
+						<li class="on">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+					<ul class="picbox">
+						<li><a href="#"><img src="images/temp/pic6.jpg" width="900" height="230" alt="" /></a></li>
+					</ul>
+				</div>
+				<ul class="shoplist">
+					<li><a href="#" class="pic"><img src="http://img32.ddimg.cn/60/4/1156751502-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img32.ddimg.cn/60/4/1156751502-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img32.ddimg.cn/60/4/1156751502-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img32.ddimg.cn/60/4/1156751502-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img32.ddimg.cn/60/4/1156751502-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="aside">
+			<div class="head">
+				<h3>推荐品牌</h3>
+				<div class="tab_icon"><span class="number"><span>1</span>/2</span><span class="arrow_l"></span><span class="arrow_r"></span></div>
+			</div>
+			<div class="list_box">
+				<ul class="list">
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+			<ul class="ad_list">
+				<li><a href="#"><img src="images/temp/pic3.jpg" width="288" height="125" alt="" /></a></li>
+				<li><a href="#"><img src="images/temp/pic3.jpg" width="288" height="125" alt="" /></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="ad_bar">
+		<div class="left">
+			<ul class="tab">
+				<li class="on">食 品</li>
+				<li>母 婴</li>
+				<li>3</li>
+			</ul>
+			<div class="tab_c">
+				<div class="content"><a href="#"><img src="images/temp/ad_pic_l.jpg" alt="" width="898" height="125" /></a></div>
+			</div>
+		</div>
+		<div class="right"><div style="padding-top:20px;"><a href="#"><img src="images/temp/ad_pic_r.jpg" height="125" width="288" alt="" /></a></div></div>
+	</div>
+	<div class="spacer"></div>
+	<div class="abox outdoor_mode">
+		<div class="section">
+			<h3><a href="#"><img src="images/temp/text_pic16.png" alt="" /></a></h3>
+			<ul class="tab">
+				<li class="on">护肤</li>
+				<li>护肤</li>
+			</ul>
+			<div class="tab_c">
+				<div class="showbox">
+					<ul class="tab_i">
+						<li class="on">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+					<ul class="picbox">
+						<li><a href="#"><img src="images/temp/pic6.jpg" width="900" height="230" alt="" /></a></li>
+					</ul>
+				</div>
+				<ul class="shoplist">
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="aside">
+			<div class="head">
+				<h3>推荐品牌</h3>
+				<div class="tab_icon"><span class="number"><span>1</span>/2</span><span class="arrow_l"></span><span class="arrow_r"></span></div>
+			</div>
+			<div class="list_box">
+				<ul class="list">
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="abox beauty_mode">
+		<div class="section">
+			<h3><a href="#"><img src="http://img3.ddimg.cn/00131/pic/text_pic15.png" alt="" /></a></h3>
+			<ul class="tab">
+				<li class="on">护肤</li>
+				<li>护肤</li>
+			</ul>
+			<div class="tab_c">
+				<div class="showbox">
+					<ul class="tab_i">
+						<li class="on">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+					<ul class="picbox">
+						<li><a href="#"><img src="images/temp/pic6.jpg" width="900" height="230" alt="" /></a></li>
+					</ul>
+				</div>
+				<ul class="shoplist">
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="aside">
+			<div class="head">
+				<h3>推荐品牌</h3>
+				<div class="tab_icon"><span class="number"><span>1</span>/2</span><span class="arrow_l"></span><span class="arrow_r"></span></div>
+			</div>
+			<div class="list_box">
+				<ul class="list">
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="abox living_mode">
+		<div class="section">
+			<h3><a href="#"><img src="http://img3.ddimg.cn/00130/4534534/xds_njj.png" alt="" /></a></h3>
+			<ul class="tab">
+				<li class="on">护肤</li>
+				<li>护肤</li>
+			</ul>
+			<div class="tab_c">
+				<div class="showbox">
+					<ul class="tab_i">
+						<li class="on">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+					<ul class="picbox">
+						<li><a href="#"><img src="images/temp/pic6.jpg" width="900" height="230" alt="" /></a></li>
+					</ul>
+				</div>
+				<ul class="shoplist">
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="aside">
+			<div class="head">
+				<h3>推荐品牌</h3>
+				<div class="tab_icon"><span class="number"><span>1</span>/2</span><span class="arrow_l"></span><span class="arrow_r"></span></div>
+			</div>
+			<div class="list_box">
+				<ul class="list">
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="abox digital_3c">
+		<div class="section">
+			<h3><a href="#"><img src="http://img3.ddimg.cn/00131/pic/text_pic14.png" alt="" /></a></h3>
+			<ul class="tab">
+				<li class="on">护肤</li>
+				<li>护肤</li>
+			</ul>
+			<div class="tab_c">
+				<div class="showbox">
+					<ul class="tab_i">
+						<li class="on">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+					<ul class="picbox">
+						<li><a href="#"><img src="images/temp/pic6.jpg" width="900" height="230" alt="" /></a></li>
+					</ul>
+				</div>
+				<ul class="shoplist">
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="aside">
+			<div class="head">
+				<h3>推荐品牌</h3>
+				<div class="tab_icon"><span class="number"><span>1</span>/2</span><span class="arrow_l"></span><span class="arrow_r"></span></div>
+			</div>
+			<div class="list_box">
+				<ul class="list">
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div class="abox book_mode">
+		<div class="section">
+			<div class="head">
+				<h3><a href="#" class="link"><img src="http://img3.ddimg.cn/00130/4534534/bookpic-153.png" alt="" /></a></h3>
+				<ul class="tab">
+					<li>童书</li>
+					<li class="on">童书</li>
+				</ul>
+				<div class="line"></div>
+			</div>
+			<div class="tab_c">
+				<ul class="shoplist">
+					<li><a href="#" class="pic"><img src="http://img37.ddimg.cn/33/23/22736967-1_a.jpg" width="100" height="100" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img37.ddimg.cn/33/23/22736967-1_a.jpg" width="100" height="100" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img37.ddimg.cn/33/23/22736967-1_a.jpg" width="100" height="100" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img37.ddimg.cn/33/23/22736967-1_a.jpg" width="100" height="100" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+				</ul>
+				<div class="book_ad">
+					<ul class="tab_c">
+						<li><a href="#"><img src="images/temp/book_ad.jpg" width="270" height="350" alt="" /></a></li>
+					</ul>
+					<ul class="tab_i">
+						<li class="on">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+				</div>
+				<ul class="shoplist">
+					<li><a href="#" class="pic"><img src="http://img37.ddimg.cn/33/23/22736967-1_a.jpg" width="100" height="100" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img37.ddimg.cn/33/23/22736967-1_a.jpg" width="100" height="100" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;90.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img37.ddimg.cn/33/23/22736967-1_a.jpg" width="100" height="100" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;902.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+					<li><a href="#" class="pic"><img src="http://img37.ddimg.cn/33/23/22736967-1_a.jpg" width="100" height="100" alt="" /></a>
+						<p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+						<p><span class="price_n">&yen;902.00</span><span class="rice_r">&yen;120.00</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="aside">
+			<ul class="tab">
+				<li class="on">新书榜</li>
+				<li>畅销榜</li>
+				<li>五星榜</li>
+			</ul>
+			<div class="tab_c">
+				<ol>
+					<li class="m"><span>1.</span><a href="#">二号首长》黄晓阳 本季度本季度最热门五星榜单本季度最热门五星榜单</a></li>
+					<li class="m"><span>2.</span><a href="#">《二号首长》黄晓阳 本季度最热门五星榜单</a></li>
+					<li class="m"><span>3.</span><a href="#">《二号首长》黄晓阳 本季度最热门五星榜单</a></li>
+					<li class="m"><span>4.</span><a href="#">《二号首长》黄晓阳 本季度最热门五星榜单</a></li>
+					<li class="m"><span>5.</span><a href="#">《二号首长》黄晓阳 本季度最热门五星榜单</a></li>
+					<li><span>6.</span><a href="#">《二号首长》黄晓阳 本季度最热门五星榜单</a></li>
+					<li><span>7.</span><a href="#">《二号首长》黄晓阳 本季度最热门五星榜单</a></li>
+					<li><span>8.</span><a href="#">《二号首长》黄晓阳 本季度最热门五星榜单</a></li>
+				</ol>
+			</div>
+			<ul class="ad_list">
+				<li><a href="#"><img src="images/temp/pic3.jpg" width="288" height="125" alt="" /></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="spacer"></div>
+    <div class="abox ddyoupin">
+        <div class="section">
+            <h3><a href="#"><img src="http://img3.ddimg.cn/00130/4534534/xds_nyp.png" alt="当当优品" style="display: inline;"></a></h3>
+            <ul class="tab">
+                <li class="on">护肤</li>
+                <li>护肤</li>
+            </ul>
+            <div class="tab_c">
+                <div class="showbox">
+                    <ul class="tab_i">
+                        <li class="on">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                    <ul class="picbox">
+                        <li><a href="#"><img src="images/temp/pic6.jpg" width="900" height="230" alt=""></a></li>
+                    </ul>
+                </div>
+                <ul class="shoplist">
+                    <li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt=""></a>
+                        <p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+                        <p><span class="price_n">￥90.00</span><span class="rice_r">￥120.00</span></p>
+                    </li>
+                    <li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt=""></a>
+                        <p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+                        <p><span class="price_n">￥90.00</span><span class="rice_r">￥120.00</span></p>
+                    </li>
+                    <li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt=""></a>
+                        <p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+                        <p><span class="price_n">￥90.00</span><span class="rice_r">￥120.00</span></p>
+                    </li>
+                    <li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt=""></a>
+                        <p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+                        <p><span class="price_n">￥90.00</span><span class="rice_r">￥120.00</span></p>
+                    </li>
+                    <li><a href="#" class="pic"><img src="http://img31.ddimg.cn/57/2/1449187401-1_l.jpg" alt=""></a>
+                        <p class="name"><a href="#" title="">哥伦比亚Columbia 新款男风衣 <span class="color">Columbia 新款男风衣</span></a></p>
+                        <p><span class="price_n">￥90.00</span><span class="rice_r">￥120.00</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="aside">
+			<div class="head">
+				<h3>推荐品牌</h3>
+				<div class="tab_icon"><span class="number"><span>1</span>/2</span><span class="arrow_l"></span><span class="arrow_r"></span></div>
+			</div>
+			<div class="list_box">
+				<ul class="list">
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt=""></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt=""></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt=""></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt=""></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt=""></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt=""></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt=""></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt=""></a></li>
+					<li><a href="#"><img src="images/temp/brand_logo.jpg" alt=""></a></li>
+				</ul>
+			</div>
+			<ul class="ad_list">
+				<li><a href="#"><img src="images/temp/pic3.jpg" width="288" height="125" alt=""></a></li>
+				<li><a href="#"><img src="images/temp/pic3.jpg" width="288" height="125" alt=""></a></li>
+			</ul>
+		</div>
+    </div>
+	<div class="spacer"></div>
+	<div class="abox outlets">
+		<div class="title_box"><a href="#"><img src="images/temp/text_pic9.png" alt="" /></a><img src="images/temp/text_pic10.png" alt="" /> <span class="time">每日12点更新</span></div>
+		<ul class="list">
+			<li class="l on"><a href="#"><img src="http://img36.ddimg.cn/64/26/22574836-1_f.jpg" width="93" alt="" /></a>
+				<div class="mask"><a href="#">上帝发誓的</a></div>
+			</li>
+			<li><a href="#"><img src="http://img36.ddimg.cn/64/26/22574836-1_f.jpg" width="93" alt="" /></a>
+				<div class="mask"><a href="#">上帝发誓的</a></div>
+			</li>
+			<li class="l"><a href="#"><img src="http://img36.ddimg.cn/64/26/22574836-1_f.jpg" width="93" alt="" /></a>
+				<div class="mask"><a href="#">上帝发誓的</a></div>
+			</li>
+			<li><a href="#"><img src="http://img36.ddimg.cn/64/26/22574836-1_f.jpg" width="93" alt="" /></a>
+				<div class="mask"><a href="#">上帝发誓的</a></div>
+			</li>
+		</ul>
+		<ul class="show_list">
+			<li class="first on"><a href="#"><img src="images/temp/pic5.jpg" alt="" width="253" height="319" /></a></li>
+			<li><a href="#"><img src="images/temp/pic5.jpg" alt="" width="253" height="319" /></a></li>
+			<li><a href="#"><img src="images/temp/pic5.jpg" alt="" width="253" height="319" /></a></li>
+			<li><a href="#"><img src="images/temp/pic5.jpg" alt="" width="253" height="319" /></a></li>
+		</ul>
+	</div>
+	<div class="ad_bar">
+		<div class="left">
+			<ul class="tab">
+				<li class="on">食 品</li>
+				<li>母 婴</li>
+			</ul>
+			<div class="tab_c">
+				<div class="content"><a href="#"><img src="images/temp/ad_pic_l.jpg" alt="" width="898" height="125" /></a></div>
+			</div>
+		</div>
+		<div class="right"><div style="padding-top:20px;"><a href="#"><img src="images/temp/ad_pic_r.jpg" width="288" height="125" alt="" /></a></div></div>
+	</div>
+	<div class="ad_bar" style="background: #f00;"></div>
+	<div class="ad_bar" style="background: #f00;">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+	<div class="ad_bar" style="background: #f00;">
+		<div class="left" style="background: #f00; border-top: solid 1px #000;"></div>
+		<div class="right" style="display: none;"></div>
+	</div>
+	<div class="ad_bar">
+		<div class="left" id="ad_cpt_14501_14502_14503_0">
+			<ul class="tab">
+				<li id="ad_title_pos_14501_14502_14503_0_0" class="on">饰品</li>
+				<li id="ad_title_pos_14501_14502_14503_0_1" class="">服装</li>
+				<li id="ad_title_pos_14501_14502_14503_0_2" class="">数码</li>
+			</ul>
+			<div class="tab_c">
+				<div class="content"><a id="ad_pic_pos_14501_14502_14503_0_0" target="_blank" href="http://a.dangdang.com/tjump.php?q=awfHUY5XfRDiVD%2FU3vz6JAuFW4wbNp0U3CHSsAOynIexj1dGXvGtcoKKe6hKCQmLCu8P3gPSxxQ%2BJUndJgd3lbQCA%3D%3D" title="当首-轮转横幅下1" style=""><img src="http://productapiad.dangdang.com:8000/adsmart/35/3592801f165dc09ce115a204a6ae21d5.jpg" alt="当首-轮转横幅下1"><i class="icon_ad" style="position: absolute; right: 0; width: 40px; height: 40px; background: #f00;"></i></a><a style="display: none;" id="ad_pic_pos_14501_14502_14503_0_1" target="_blank" href="http://a.dangdang.com/tjump.php?q=ayh85Hv%2BMF%2B7lisFYCUzkTUfK%2B7UxiENVeVUFOgRnMxEhtdGXvGtcoKKe6hKCQmLCu8P3gPSxxQ%2BJUndJgd3lbQCA%3D%3D" title="当首-横幅下2"><img src="http://productapiad.dangdang.com:8000/adsmart/ff/ffb4e94ecd7848aca30e3fc923c6b9cf.jpg" alt="当首-横幅下2"><i class="icon_ad"></i></a><a style="display: none;" id="ad_pic_pos_14501_14502_14503_0_2" target="_blank" href="http://a.dangdang.com/tjump.php?q=apxKpsARU4vHHFVTV3lX1N5aHhXJ4eq7woMJOJwc%2BxJPvBdGXvGtcoKKe6hKCQmLCu8P3gPSxxQ%2BJUndJgd3lbQCA%3D%3D" title="当首-横幅下3"><img src="http://productapiad.dangdang.com:8000/adsmart/e0/e0faf89438d00164aee031402850e6f8.jpg" alt="当首-横幅下3"><i class="icon_ad"></i></a></div>
+			</div>
+		</div>
+		<div class="right" id="ad_cpt_14701">
+			<div><a href="http://f.dangdang.com" target="_blank" title="分享当然有乐趣"><img src="http://a.dangdang.com/static/images/7_288_125_14701_forum.jpg" alt="分享当然有乐趣"><i class="icon_ad" style="position: absolute; right: 0; width: 40px; height: 40px; background: #f00;"></i></a></div>
+		</div>
+	</div>
+	<div class="ad_bar" id="ad_cpt_14301_14302_14303_0">
+		<ul class="tab">
+			<li id="ad_title_pos_14301_14302_14303_0_0" class="on">鞋包</li>
+			<li id="ad_title_pos_14301_14302_14303_0_1" class="">鞋包</li>
+		</ul>
+		<div class="tab_c">
+			<div class="content"><a id="ad_pic_pos_14301_14302_14303_0_0" target="_blank" href="http://a.dangdang.com/tjump.php?q=abkF5bvAH0WE6LHk9NZePFpGET1sFR03f3GUqb8badAsXBdGXvGtcoKKe6hKCQmLCu8P3gPSxxQ%2BJUndJgd3lbQCA%3D%3D" title="当首-轮转横幅上" style=""><img src="http://productapiad.dangdang.com:8000/adsmart/6a/6a56772b60d8cd8ff5b930f05a6abcf5.jpg" alt="当首-轮转横幅上"><i class="icon_ad" style="position: absolute; right: 0; width: 40px; height: 40px; background: #f00;"></i></a><a style="display: none;" id="ad_pic_pos_14301_14302_14303_0_1" target="_blank" href="http://a.dangdang.com/tjump.php?q=anu7ZNWvtMD5fjp0LGZnlOgh7izqojFtPyrRJf0%2BZCuDOJdGXvGtcoKKe6hKCQmLCu8P3gPSxxQ%2BJUndJgd3lbQCA%3D%3D" title="当首-轮转横幅2"><img src="http://productapiad.dangdang.com:8000/adsmart/a6/a63da8f3a97aff1ab1e1ae95abcec965.jpg" alt="当首-轮转横幅2"><i class="icon_ad" style="position: absolute; right: 0; bottom: 0; _bottom: 20px; width: 40px; height: 40px; background: #f00;"></i></a><a style="display: none;" id="ad_pic_pos_14301_14302_14303_0_2" target="_blank" href="http://a.dangdang.com/tjump.php?q=apmfG14mUjw8Q1tNTPjn2i5Q8MOM73GAdwD5QZLjcJ%2B%2FVFdGXvGtcoKKe6hKCQmLCu8P3gPSxxQ%2BJUndJgd3lbQCA%3D%3D" title="横幅3"><img src="http://productapiad.dangdang.com:8000/adsmart/52/528bcc493d2d9505e0dd233fdbf21a50.jpg" alt="横幅3"></a></div>
+		</div>
+	</div>
+</div>
+<div class="public_footer_box">
+	<div class="foot_pop_l"><a href="#"><img src="http://img4.ddimg.cn/00131/pic/1413692901.jpg" alt="" /></a></div>
+	<div class="foot_pop_r"><a href="#"><img src="http://img4.ddimg.cn/00131/pic/1413692901.jpg" alt="" /></a></div>
+	<div class="public_footer">
+		<div class="footer_sort footer_nvice">
+			<span class="f_title">购物指南</span>
+			<ul>
+				<li><a href="http://support.dangdang.com/helpcenter/api_cms/helpcenter/question_sort/2239/180082.shtml" target="_blank" class="main">购买流程</a></li>
+				<li><a href="http://support.dangdang.com/helpcenter/api_cms/helpcenter/question_sort/2238/180311.shtml" target="_blank">积分说明</a></li>
+				<li><a href="http://support.dangdang.com/helpcenter/api_cms/helpcenter/question_sort/2241/180111.shtml" target="_blank">发票制度</a></li>
+				<li><a href="" target="_blank">会员制度</a></li>
+				<li><a href="" target="_blank">购物保障</a></li>
+				<li><a href="" target="_blank">常见问题</a></li>
+			</ul>
+		</div>
+		<div class="footer_sort footer_aftermarket">
+			<span class="f_title">账户管理</span>
+			<ul>
+				<li><a href="" target="_blank">自助修改邮箱</a></li>
+				<li><a href="" target="_blank">自助修改密码</a></li>
+				<li><a href="" target="_blank">自助修改手机</a></li>
+				<li><a href="" target="_blank">支付密码设置</a></li>
+				<li><a href="" target="_blank">账户余额查询</a></li>
+				<li><a href="" target="_blank">如何找回密码</a></li>
+			</ul>
+		</div>
+		<div class="footer_sort footer_distribution">
+			<span class="f_title">配送方式</span>
+			<ul>
+				<li><a href="http://support.dangdang.com/helpcenter/api_cms/helpcenter/question_sort/2240/180088.shtml" target="_blank" class="main">配送范围及时间</a></li>
+				<li><a href="" target="_blank">当日订当日达</a></li>
+				<li><a href="" target="_blank">当日定次日达</a></li>
+				<li><a href="" target="_blank" class="main">免运费标准</a></li>
+				<li><a href="" target="_blank">订单自提</a></li>
+				<li><a href="" target="_blank">订单配送查询</a></li>
+			</ul>
+		</div>
+		<div class="footer_sort footer_pay">
+			<span class="f_title">支付方式</span>
+			<ul>
+				<li><a href="http://support.dangdang.com/helpcenter/api_cms/helpcenter/question_sort/2241/180094.shtml" target="_blank">网上支付</a></li>
+				<li><a href="http://support.dangdang.com/helpcenter/api_cms/helpcenter/question_sort/2241/179421.shtml" target="_blank">货到付款</a></li>
+				<li><a href="http://support.dangdang.com/helpcenter/api_cms/helpcenter/question_sort/2241/180096.shtml" target="_blank">银行转帐</a></li>
+				<li><a href="" target="_blank">礼品卡支付</a></li>
+				<li><a href="" target="_blank" class="main">礼券支付</a></li>
+				<li><a href="" target="_blank">到款查询</a></li>
+			</ul>
+		</div>
+		<div class="footer_sort footer_characteristic">
+			<span class="f_title">订单服务</span>
+			<ul>
+				<li><a href="" target="_blank">订单状态说明</a></li>
+				<li><a href="" target="_blank">订单拆分说明</a></li>
+				<li><a href="" target="_blank" class="main">订单配送查询</a></li>
+				<li><a href="" target="_blank">订单自助修改</a></li>
+				<li><a href="" target="_blank">订单自助取消</a></li>
+				<li><a href="" target="_blank">验货与签收</a></li>
+			</ul>
+		</div>
+		<div class="footer_sort footer_help">
+			<span class="f_title">退换货</span>
+			<ul>
+				<li><a href="" target="_blank">图书退换货</a></li>
+				<li><a href="" target="_blank">百货退换货</a></li>
+				<li><a href="" target="_blank">3C数码退换货</a></li>
+				<li><a href="" target="_blank">自助退货申请</a></li>
+				<li><a href="" target="_blank">自助换货申请</a></li>
+				<li><a href="" target="_blank">退换货进度查询</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<div class="footer_pic"><a href="http://support.dangdang.com/helpcenter/api_cms/helpcenter/question_sort/2242/180110.shtml" target="_blank" class="footer_pic01">正品保证 假一罚一</a><a class="footer_pic02" href="http://promo.dangdang.com/" target="_blank">一网打尽 更多优惠</a><a class="footer_pic03" href="http://blog.dangdang.com/?p=5770#ref=www-0-F" target="_blank">800城市货到付款 北上广深当日达</a><a class="footer_pic04" href="http://support.dangdang.com/helpcenter/api_cms/helpcenter/question_sort/2242/179422.shtml" target="_blank">上门退货当场退款</a></div>
+		<div class="footer_nav"><a href="http://static.dangdang.com/topic/2227/176801.shtml" target="_blank">公司简介</a><span class="sep">|</span><a href="http://ir.dangdang.com/" target="_blank">Investor Relations</a><span class="sep">|</span><a href="http://static.dangdang.com/topic/contents/1125/2263.shtml" target="_blank">诚征英才</a><span class="sep">|</span><a href="http://union.dangdang.com/union/" target="_blank">网站联盟</a><span class="sep">|</span><a href="http://static.dangdang.com/topic/744/8251.shtml" target="_blank">百货招商</a><span class="sep">|</span><a href="http://misc.dangdang.com/groupbuy/Default.aspx" target="_blank">团购</a><span class="sep">|</span><a href="http://support.dangdang.com/helpcenter/api_cms/helpcenter/question_sort/2239/180087.shtml" target="_blank">手机当当</a><span class="sep">|</span><a href="http://blog.dangdang.com/" target="_blank">官方Blog</a></div>
+		<!--gy 100730 修改-->
+		<div class="footer_copyright02"><span>Copyright (C) 当当网 2004-2011, All Rights Reserved</span></div>
+		<div class="footer_copyright"><span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证041189号</a></span><span class="sep">|</span><span><a href="http://static.dangdang.com//music/topic/847_10762.shtml" target="_blank">音像制品经营许可证 京音网8号</a></span><span class="sep">|</span><span><a href="#">食品流通许可证：SP1101011010021855(1-1)</a></span></br><span>互联网药品信息服务资格证编号：(京)-非经营性-2012-0016</span><span class="sep">|</span><span><a href="#" target="_blank">京公网安备110101000001号</a></span></div>
+		<div class="clear"></div>
+		<div class="footer_icon">
+			<div class="validator"><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001051000098" target="_blank" class="footer_img"><img src="http://img4.ddimg.cn/00012/2010/validate.gif" /></a></div>
+			<div class="knet"><!-- 可信网站LOGO安装开始 -->
+				<script type="text/JavaScript">
+					function CNNIC_change(eleId) {
+						var str = document.getElementById(eleId).href;
+						var str1 = str.substring(0, (str.length - 6));
+						str1 += CNNIC_RndNum(6);
+						document.getElementById(eleId).href = str1;
+					}
 
-    
+					function CNNIC_RndNum(k) {
+						var rnd = "";
+						for (var i = 0; i < k; i++)
+							rnd += Math.floor(Math.random() * 10);
+						return rnd;
+					}
+				</script>
+				<a href="https://ss.cnnic.cn/verifyseal.dll?sn=2010091900100002234&pa=2940051" tabindex="-1" id="urlknet" target="_blank"><img width="128" height="47" alt="&#x53EF;&#x4FE1;&#x7F51;&#x7AD9;" name="CNNIC_seal" border="true" src="http://img4.ddimg.cn/00012/2010/knetSealLogo.png" oncontextmenu="return false;" onClick="CNNIC_change('urlknet')" /> </a><!-- 可信网站LOGO安装结束 --></div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<link href="css/smart.css" rel="stylesheet" type="text/css" />
+<div id="dlbanner_right" class="homepage_coupletright" style="display: none;">
+	<div class="dd_ad_dl_hide">
+		<div class="dd_ad_dl_over"><span class="dd_ad_dl_close_icon"></span><a href="#" target="_blank"><img width="110" height="300" src="http://a.dangdang.com/static/images/transparent.gif" class="dd_ad_dl_over_trans"></a></div>
+		<div class="dd_ad_dl_ob">
+			<object width="110" height="300" align="middle" src="http://img4.ddimg.cn/daimage/b0/b0cf389438e9a9e60168dd12bdbe9f62.swf" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" id="noname"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="movie" value="http://img4.ddimg.cn/daimage/b0/b0cf389438e9a9e60168dd12bdbe9f62.swf"><param name="quality" value="high"><param name="wmode" value="transparent"><param value="_iCAST_domain=myhome2010.dangdang.com%2chead.dangdang.com" name="flashvars">
+				<embed width="110" height="300" align="middle" src="http://img4.ddimg.cn/daimage/b0/b0cf389438e9a9e60168dd12bdbe9f62.swf" allownetworking="all" flashvars="_iCAST_domain=myhome2010.dangdang.com%2chead.dangdang.com" quality="high" wmode="transparent" swliveconnect="true" id="Embed1" name="noname" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+			</object>
+		</div>
+	</div>
+	<div class="dd_ad_dl_narrow">
+		<div class="dd_ad_dl_over"><span class="dd_ad_dl_close_icon"></span><a href="http://a.dangdang.com/tjump.php?q=abf65s1LCmP%2B6f1Q22pzmmwNdiBMKdrYbIgLYGTEp2%2FXoaJ1nPp%2FJNRiRhQwSGUj1%2FSQVwC7ZMvtqRuSxCFeDxFn5CxPU%2FV25yaB6Rp76qDY5knrbmGRW46%2FO5aCB7I7dZh" target="_blank"><img width="20px" height="300px" border="0" src="http://a.dangdang.com/static/images/transparent.gif" class="dd_ad_dl_over_trans"></a></div>
+		<div class="dd_ad_dl_ob">
+			<object width="20" height="300" align="middle" src="http://img4.ddimg.cn/daimage/4a/4a884017088e022addd60608b354bf0a.swf" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" id="Object1"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="movie" value="http://img4.ddimg.cn/daimage/4a/4a884017088e022addd60608b354bf0a.swf"><param name="quality" value="high"><param name="wmode" value="transparent"><param value="_iCAST_domain=myhome2010.dangdang.com%2chead.dangdang.com" name="flashvars">
+				<embed width="20" height="300" align="middle" src="http://img4.ddimg.cn/daimage/4a/4a884017088e022addd60608b354bf0a.swf" allownetworking="all" flashvars="_iCAST_domain=myhome2010.dangdang.com%2chead.dangdang.com" quality="high" wmode="transparent" swliveconnect="true" id="Embed2" name="noname" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+			</object>
+		</div>
+	</div>
+</div>
+<div id="dlbanner_left" class="homepage_coupletleft" style="display: none;">
+	<div class="dd_ad_dl_narrow">
+		<div class="dd_ad_dl_over"><span class="dd_ad_dl_close_icon"></span><a href="#" target="_blank"><img width="110" height="300" src="http://a.dangdang.com/static/images/transparent.gif" class="dd_ad_dl_over_trans"></a></div>
+		<div class="dd_ad_dl_ob">
+			<object width="110" height="300" align="middle" src="http://img4.ddimg.cn/daimage/b0/b0cf389438e9a9e60168dd12bdbe9f62.swf" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" id="Object2"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="movie" value="http://img4.ddimg.cn/daimage/b0/b0cf389438e9a9e60168dd12bdbe9f62.swf"><param name="quality" value="high"><param name="wmode" value="transparent"><param value="_iCAST_domain=myhome2010.dangdang.com%2chead.dangdang.com" name="flashvars">
+				<embed width="110" height="300" align="middle" src="http://img4.ddimg.cn/daimage/b0/b0cf389438e9a9e60168dd12bdbe9f62.swf" allownetworking="all" flashvars="_iCAST_domain=myhome2010.dangdang.com%2chead.dangdang.com" quality="high" wmode="transparent" swliveconnect="true" id="Embed3" name="noname" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+			</object>
+		</div>
+	</div>
+	<div class="dd_ad_dl_hide">
+		<div class="dd_ad_dl_over"><span class="dd_ad_dl_close_icon"></span><a href="http://a.dangdang.com/tjump.php?q=abf65s1LCmP%2B6f1Q22pzmmwNdiBMKdrYbIgLYGTEp2%2FXoaJ1nPp%2FJNRiRhQwSGUj1%2FSQVwC7ZMvtqRuSxCFeDxFn5CxPU%2FV25yaB6Rp76qDY5knrbmGRW46%2FO5aCB7I7dZh" target="_blank"><img width="20px" height="300px" border="0" src="http://a.dangdang.com/static/images/transparent.gif" class="dd_ad_dl_over_trans"></a></div>
+		<div class="dd_ad_dl_ob">
+			<object width="20" height="300" align="middle" src="http://img4.ddimg.cn/daimage/4a/4a884017088e022addd60608b354bf0a.swf" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" id="Object3"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="movie" value="http://img4.ddimg.cn/daimage/4a/4a884017088e022addd60608b354bf0a.swf"><param name="quality" value="high"><param name="wmode" value="transparent"><param value="_iCAST_domain=myhome2010.dangdang.com%2chead.dangdang.com" name="flashvars">
+				<embed width="20" height="300" align="middle" src="http://img4.ddimg.cn/daimage/4a/4a884017088e022addd60608b354bf0a.swf" allownetworking="all" flashvars="_iCAST_domain=myhome2010.dangdang.com%2chead.dangdang.com" quality="high" wmode="transparent" swliveconnect="true" id="Embed4" name="noname" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+			</object>
+		</div>
+	</div>
+</div>
+<script src="js/jquery-1.6.4.min.js"></script>
+<script src="js/test.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<div class="ddhome_tcad" style="z-index: 10001; position: fixed; background: none repeat scroll 0% 0% rgb(207, 222, 244); bottom: 0px; right: 0px; overflow: hidden; display: none; height: 200px; margin: 0px;" id="message">
+	<div id="message_content">
+		<div class="ddhome_tcad">
+			<div class="dd_ad_pop">
+				<div class="dd_ad_pop_over"><span class="dd_ad_pop_close_icon" id="Span1"></span><a href="http://a.dangdang.com/tjump.php?q=ageIMRUaB1btnFNArQ7KFcX6EQvPsTlCh7FE6wakICWP5SJ1nPp%2FJNRiRhQwSGUj1%2FSQVwC7ZMvtqRuSxCFeDxFnxVz9wueGBsPW6cZiuH9VNHnHKTDSDYvaIEEr9t5sB5%2B" target="_blank"><img src="http://a.dangdang.com/static/images/transparent.gif" class="dd_ad_pop_over_trans"></a></div>
+				<div class="dd_ad_pop_ob">
+					<object width="340" height="256" align="middle" src="http://img4.ddimg.cn/daimage/c1/c1e4001ad77078cccbfdeb03e4901507.swf" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" id="Object5"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="movie" value="http://img4.ddimg.cn/daimage/c1/c1e4001ad77078cccbfdeb03e4901507.swf"><param name="quality" value="high"><param name="wmode" value="transparent"><param value="_iCAST_domain=myhome2010.dangdang.com%2chead.dangdang.com" name="flashvars">
+						<embed width="340" height="256" align="middle" src="http://img4.ddimg.cn/daimage/c1/c1e4001ad77078cccbfdeb03e4901507.swf" allownetworking="all" flashvars="_iCAST_domain=myhome2010.dangdang.com%2chead.dangdang.com" quality="high" wmode="transparent" swliveconnect="true" id="Embed6" name="noname" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+					</object>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="fixedbar">
+	<iframe src="" frameborder="0" class="fixedbar_if"></iframe>
+	<div class="backtop backtop_01">
+		<div class="window_suspend"><a href="##" class="window_suspend_a"></a>
+      <ul>
+        <li class="frist"><a href="##"><div class="title">一二三四五六七八九</div><div class="erwei"><span style="background-image:url(images/erwei_ebook.jpg)">每天免费<br/>获取电子书</span></div></a></li>
+        <li><a href="#"><div class="title">一二三四五六七八九</div><div class="erwei"><span style="background-image:url(images/erwei_app.jpg)">随手查订单<br/>随时享优惠</span></div></a></li>
+      </ul>
+    </div>
+	</div>
+	<div class="backtop backtop_02">
+		<div class="window_suspend"><a href="#" class="window_suspend_a"></a>
+      <ul>
+        <li><a href="##">广告文字bu限字</a></li>
+      </ul>
+    </div>
+	</div>
+	<div class="backtop backtop_03">
+		<div class="window_suspend"><a href="#" class="window_suspend_a"></a>
+      <ul>
+        <li><a href="##">有奖调查</a></li>
+      </ul>
+    </div>
+	</div>
+	<div class="backtop backtop_04">
+		<div class="window_suspend"><a href="#" class="window_suspend_a"></a>
+    </div>
+	</div>
 
-  </body>
+</div>
+<script>
+$(function(){
+    $(".backtop").bind("mouseover",function(){
+	    $(this).find("ul").show();
+	    $(this).parent().find('.fixedbar_if').css('width',$(this).find("ul").width() + 52);
+		$(this).find(".window_suspend_a").addClass("backtop_hover");
+	});
+	  $(".backtop").bind("mouseout",function(){
+	    $(this).find("ul").hide();
+	    $(this).parent().find('.fixedbar_if').css('width',"50px");
+		$(this).find(".window_suspend_a").removeClass("backtop_hover");
+	})
+})
+</script>
+<style>
+	.clear { clear: both; }
+
+	.ad_bar, .ad_bar_b { display: none; }
+	.click_link { display: block; width: 100%; position: absolute; left: 0; top: 0; }
+</style>
+<!-- -->
+<div class="pop_up_ad" style="display: none;"><a href="#" class="click_link"><img src="" alt="" width="1200" height="520" /></a>
+	<embed type="application/x-shockwave-flash" src="http://images.sohu.com/bill/s2012/songliping/dianxin/4501050925.swf" width="1200" height="520" id="_bc7d8139bbbdb08696bcfbbb65de1a6f" name="_bc7d8139bbbdb08696bcfbbb65de1a6f" quality="high" wmode="opaque" flashvars="clickthru=http%3A//sohu.ad-plus.cn/event.ng/Type%3Dclick%26FlightID%3D201209%26TargetID%3Dsohu%26Values%3Dbc7d8139%2Cbbbdb086%2C96bcfbbb%2C65de1a6f%26AdID%3D14576684"><a class="close" href="#"><span></span>关闭</a></div>
+<script>
+	$(function () {
+		$('.limitbox li').hover(function () {
+			$(this).addClass('hover');
+		}, function () {
+			$(this).removeClass('hover');
+		});
+
+
+		$.get("http://www.dangdang.com/index.php", function (data) {
+			alert("Data Loaded: " + data);
+		}
+        );
+        
+	})
+
+</script>
+</body>
 </html>
